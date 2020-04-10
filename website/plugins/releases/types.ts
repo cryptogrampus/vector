@@ -8,8 +8,6 @@ export interface PluginOptions {
   include: string[];
   releaseComponent: string;
   releaseDownloadComponent: string;
-  releaseHighlightComponent: string;
-  releaseHighlightsListComponent: string;
   releaseListComponent: string;
   remarkPlugins: string[];
   rehypePlugins: string[];
@@ -23,36 +21,11 @@ export interface Paginator {
 
 export interface ReleaseContent {
   releases: Release[];
-  releaseHighlights: ReleaseHighlight[];
 }
 
 export interface Tag {
   label: string;
   permalink: string;
-}
-
-//
-// Highlight
-//
-
-export interface ReleaseHighlight {
-  id: string;
-  metadata: ReleaseHighlightMetaData;
-}
-
-export interface ReleaseHighlightMetaData {
-  date: string;
-  description: string;
-  nextItem?: Paginator;
-  permalink: string;
-  prevItem?: Paginator;
-  readingTime: string;
-  seriesPosition: number;
-  sort: number;
-  source: string;
-  tags: (Tag | string)[];
-  title: string;
-  truncated: boolean;
 }
 
 //

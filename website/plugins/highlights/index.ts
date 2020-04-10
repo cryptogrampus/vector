@@ -4,8 +4,8 @@ import {normalizeUrl, docuHash, aliasedSitePath} from '@docusaurus/utils';
 
 import {
   PluginOptions,
-  Release,
-  ReleaseContent,
+  Highlight,
+  HighlightContent,
 } from './types';
 import {
   LoadContext,
@@ -14,62 +14,61 @@ import {
   Plugin,
 } from '@docusaurus/types';
 import {Configuration, Loader} from 'webpack';
-import {generateReleases} from './releaseUtils';
+import {generateHighlights} from './highlightUtils';
 
 const DEFAULT_OPTIONS: PluginOptions = {
-  path: 'releases', // Path to data on filesystem, relative to site dir.
-  routeBasePath: 'releases', // URL Route.
+  path: 'highlights', // Path to data on filesystem, relative to site dir.
+  routeBasePath: 'highlights', // URL Route.
   include: ['*.md', '*.mdx'], // Extensions to include.
-  releaseComponent: '@theme/ReleasePage',
-  releaseDownloadComponent: '@theme/ReleaseDownloadPage',
-  releaseListComponent: '@theme/ReleaseListPage',
+  highlightComponent: '@theme/HighlightPage',
+  highlightListComponent: '@theme/HighlightListPage',
   remarkPlugins: [],
   rehypePlugins: [],
   truncateMarker: /<!--\s*(truncate)\s*-->/, // Regex.
 };
 
-export default function pluginContentRelease(
+export default function pluginContentHighlight(
   context: LoadContext,
   opts: Partial<PluginOptions>,
-): Plugin<ReleaseContent | null> {
+): Plugin<HighlightContent | null> {
   const options: PluginOptions = {...DEFAULT_OPTIONS, ...opts};
   const {siteDir, generatedFilesDir} = context;
   const contentPath = path.resolve(siteDir, options.path);
   const dataDir = path.join(
     generatedFilesDir,
-    'releases',
+    'highlights',
   );
-  let releases: Release[] = [];
+  let highlights: Highlight[] = [];
 
   return {
-    name: 'releases',
+    name: 'highlights',
 
     getPathsToWatch() {
       const {include = []} = options;
-      const releasesGlobPattern = include.map(pattern => `${contentPath}/${pattern}`);
-      return [...releasesGlobPattern];
+      const highlightsGlobPattern = include.map(pattern => `${contentPath}/${pattern}`);
+      return [...highlightsGlobPattern];
     },
 
     async loadContent() {
       //
-      // Releases
+      // Highlights
       //
 
-      releases = await generateReleases(contentPath, context, options);
+      highlights = await generateHighlights(contentPath, context, options);
 
       // Colocate next and prev metadata.
-      releases.forEach((release, index) => {
-        const prevItem = index > 0 ? releases[index - 1] : null;
+      highlights.forEach((highlight, index) => {
+        const prevItem = index > 0 ? highlights[index - 1] : null;
         if (prevItem) {
-          release.metadata.prevItem = {
+          highlight.metadata.prevItem = {
             title: prevItem.metadata.title,
             permalink: prevItem.metadata.permalink,
           };
         }
 
-        const nextItem = index < releases.length - 1 ? releases[index + 1] : null;
+        const nextItem = index < highlights.length - 1 ? highlights[index + 1] : null;
         if (nextItem) {
-          release.metadata.nextItem = {
+          highlight.metadata.nextItem = {
             title: nextItem.metadata.title,
             permalink: nextItem.metadata.permalink,
           };
@@ -81,18 +80,18 @@ export default function pluginContentRelease(
       //
 
       return {
-        releases,
+        highlights,
       };
     },
 
     async contentLoaded({
-      content: releaseContents,
+      content: highlightContents,
       actions,
     }: {
-      content: ReleaseContent;
+      content: HighlightContent;
       actions: PluginContentLoadedActions;
     }) {
-      if (!releaseContents) {
+      if (!highlightContents) {
         return;
       }
 
@@ -101,28 +100,27 @@ export default function pluginContentRelease(
       //
 
       const {
-        releaseComponent,
-        releaseDownloadComponent,
-        releaseListComponent,
+        highlightComponent,
+        highlightListComponent,
       } = options;
 
       const {addRoute, createData} = actions;
-      const {releases} = releaseContents;
+      const {highlights} = highlightContents;
       const {routeBasePath} = options;
       const {siteConfig: {baseUrl = ''}} = context;
       const basePageUrl = normalizeUrl([baseUrl, routeBasePath]);
 
       //
-      // Releases page
+      // Highlights page
       //
 
       addRoute({
         path: basePageUrl,
-        component: releaseListComponent,
+        component: highlightListComponent,
         exact: true,
         modules: {
-          items: releases.map(release => {
-            const metadata = release.metadata;
+          items: highlights.map(highlight => {
+            const metadata = highlight.metadata;
             // To tell routes.js this is an import and not a nested object to recurse.
             return {
               content: {
@@ -138,12 +136,12 @@ export default function pluginContentRelease(
       });
 
       //
-      // Release pages
+      // Highlight pages
       //
 
       await Promise.all(
-        releases.map(async release => {
-          const {metadata} = release;
+        highlights.map(async highlight => {
+          const {metadata} = highlight;
           await createData(
             // Note that this created data path must be in sync with
             // metadataPath provided to mdx-loader.
@@ -153,18 +151,7 @@ export default function pluginContentRelease(
 
           addRoute({
             path: metadata.permalink,
-            component: releaseComponent,
-            exact: true,
-            modules: {
-              content: metadata.source,
-            },
-          });
-
-          let downloadPath = normalizeUrl([metadata.permalink, 'download']);
-
-          addRoute({
-            path: downloadPath,
-            component: releaseDownloadComponent,
+            component: highlightComponent,
             exact: true,
             modules: {
               content: metadata.source,
@@ -183,7 +170,7 @@ export default function pluginContentRelease(
       return {
         resolve: {
           alias: {
-            '~release': dataDir,
+            '~highlight': dataDir,
           },
         },
         module: {
@@ -216,7 +203,7 @@ export default function pluginContentRelease(
                     siteDir,
                     contentPath,
                     truncateMarker,
-                    releases,
+                    highlights,
                   },
                 },
               ].filter(Boolean) as Loader[],

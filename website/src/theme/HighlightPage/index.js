@@ -10,7 +10,7 @@ import classnames from 'classnames';
 import dateFormat from 'dateformat';
 import styles from './styles.module.css';
 
-function ReleaseHighlightPage(props) {
+function HighlightPage(props) {
   let description = 'Change me';
   const {content: ReleaseHighlightContents} = props;
   const {frontMatter, metadata} = ReleaseHighlightContents;
@@ -60,4 +60,4 @@ function ReleaseHighlightPage(props) {
   );
 }
 
-export default ReleaseHighlightPage;
+export default HighlightPage;

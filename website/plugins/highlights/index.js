@@ -5,48 +5,47 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const path_1 = __importDefault(require("path"));
 const utils_1 = require("@docusaurus/utils");
-const releaseUtils_1 = require("./releaseUtils");
+const highlightUtils_1 = require("./highlightUtils");
 const DEFAULT_OPTIONS = {
-    path: 'releases',
-    routeBasePath: 'releases',
+    path: 'highlights',
+    routeBasePath: 'highlights',
     include: ['*.md', '*.mdx'],
-    releaseComponent: '@theme/ReleasePage',
-    releaseDownloadComponent: '@theme/ReleaseDownloadPage',
-    releaseListComponent: '@theme/ReleaseListPage',
+    highlightComponent: '@theme/HighlightPage',
+    highlightListComponent: '@theme/HighlightListPage',
     remarkPlugins: [],
     rehypePlugins: [],
     truncateMarker: /<!--\s*(truncate)\s*-->/,
 };
-function pluginContentRelease(context, opts) {
+function pluginContentHighlight(context, opts) {
     const options = Object.assign(Object.assign({}, DEFAULT_OPTIONS), opts);
     const { siteDir, generatedFilesDir } = context;
     const contentPath = path_1.default.resolve(siteDir, options.path);
-    const dataDir = path_1.default.join(generatedFilesDir, 'releases');
-    let releases = [];
+    const dataDir = path_1.default.join(generatedFilesDir, 'highlights');
+    let highlights = [];
     return {
-        name: 'releases',
+        name: 'highlights',
         getPathsToWatch() {
             const { include = [] } = options;
-            const releasesGlobPattern = include.map(pattern => `${contentPath}/${pattern}`);
-            return [...releasesGlobPattern];
+            const highlightsGlobPattern = include.map(pattern => `${contentPath}/${pattern}`);
+            return [...highlightsGlobPattern];
         },
         async loadContent() {
             //
-            // Releases
+            // Highlights
             //
-            releases = await releaseUtils_1.generateReleases(contentPath, context, options);
+            highlights = await highlightUtils_1.generateHighlights(contentPath, context, options);
             // Colocate next and prev metadata.
-            releases.forEach((release, index) => {
-                const prevItem = index > 0 ? releases[index - 1] : null;
+            highlights.forEach((highlight, index) => {
+                const prevItem = index > 0 ? highlights[index - 1] : null;
                 if (prevItem) {
-                    release.metadata.prevItem = {
+                    highlight.metadata.prevItem = {
                         title: prevItem.metadata.title,
                         permalink: prevItem.metadata.permalink,
                     };
                 }
-                const nextItem = index < releases.length - 1 ? releases[index + 1] : null;
+                const nextItem = index < highlights.length - 1 ? highlights[index + 1] : null;
                 if (nextItem) {
-                    release.metadata.nextItem = {
+                    highlight.metadata.nextItem = {
                         title: nextItem.metadata.title,
                         permalink: nextItem.metadata.permalink,
                     };
@@ -56,32 +55,32 @@ function pluginContentRelease(context, opts) {
             // Return
             //
             return {
-                releases,
+                highlights,
             };
         },
-        async contentLoaded({ content: releaseContents, actions, }) {
-            if (!releaseContents) {
+        async contentLoaded({ content: highlightContents, actions, }) {
+            if (!highlightContents) {
                 return;
             }
             //
             // Prepare
             //
-            const { releaseComponent, releaseDownloadComponent, releaseListComponent, } = options;
+            const { highlightComponent, highlightListComponent, } = options;
             const { addRoute, createData } = actions;
-            const { releases } = releaseContents;
+            const { highlights } = highlightContents;
             const { routeBasePath } = options;
             const { siteConfig: { baseUrl = '' } } = context;
             const basePageUrl = utils_1.normalizeUrl([baseUrl, routeBasePath]);
             //
-            // Releases page
+            // Highlights page
             //
             addRoute({
                 path: basePageUrl,
-                component: releaseListComponent,
+                component: highlightListComponent,
                 exact: true,
                 modules: {
-                    items: releases.map(release => {
-                        const metadata = release.metadata;
+                    items: highlights.map(highlight => {
+                        const metadata = highlight.metadata;
                         // To tell routes.js this is an import and not a nested object to recurse.
                         return {
                             content: {
@@ -96,26 +95,17 @@ function pluginContentRelease(context, opts) {
                 },
             });
             //
-            // Release pages
+            // Highlight pages
             //
-            await Promise.all(releases.map(async (release) => {
-                const { metadata } = release;
+            await Promise.all(highlights.map(async (highlight) => {
+                const { metadata } = highlight;
                 await createData(
                 // Note that this created data path must be in sync with
                 // metadataPath provided to mdx-loader.
                 `${utils_1.docuHash(metadata.source)}.json`, JSON.stringify(metadata, null, 2));
                 addRoute({
                     path: metadata.permalink,
-                    component: releaseComponent,
-                    exact: true,
-                    modules: {
-                        content: metadata.source,
-                    },
-                });
-                let downloadPath = utils_1.normalizeUrl([metadata.permalink, 'download']);
-                addRoute({
-                    path: downloadPath,
-                    component: releaseDownloadComponent,
+                    component: highlightComponent,
                     exact: true,
                     modules: {
                         content: metadata.source,
@@ -128,7 +118,7 @@ function pluginContentRelease(context, opts) {
             return {
                 resolve: {
                     alias: {
-                        '~release': dataDir,
+                        '~highlight': dataDir,
                     },
                 },
                 module: {
@@ -158,7 +148,7 @@ function pluginContentRelease(context, opts) {
                                         siteDir,
                                         contentPath,
                                         truncateMarker,
-                                        releases,
+                                        highlights,
                                     },
                                 },
                             ].filter(Boolean),
@@ -172,4 +162,4 @@ function pluginContentRelease(context, opts) {
         },
     };
 }
-exports.default = pluginContentRelease;
+exports.default = pluginContentHighlight;

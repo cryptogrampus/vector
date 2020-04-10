@@ -8,6 +8,7 @@ import SVG from 'react-inlinesvg';
 import Toggle from '@theme/Toggle';
 
 import classnames from 'classnames';
+import {fetchNewHighlight} from '@site/src/exports/newHighlight';
 import {fetchNewPost} from '@site/src/exports/newPost';
 import {fetchNewRelease} from '@site/src/exports/newRelease';
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -62,7 +63,14 @@ function navLinkAttributes(label, right) {
       attrs.icon = 'github';
       return attrs;
 
-    case 'release highlights':
+    case 'highlights':
+      const newHighlight = fetchNewHighlight();
+
+      if (newHighlight) {
+        attrs.badge = 'new';
+        attrs.badgeStyle = 'primary';
+      }
+
       attrs.hideText = true;
       attrs.icon = 'gift';
       return attrs;

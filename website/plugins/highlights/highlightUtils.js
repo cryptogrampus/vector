@@ -8,56 +8,62 @@ const globby_1 = __importDefault(require("globby"));
 const path_1 = __importDefault(require("path"));
 const utils_1 = require("@docusaurus/utils");
 const reading_time_1 = __importDefault(require("reading-time"));
+// YYYY-MM-DD-{name}.mdx?
+// Prefer named capture, but older Node versions do not support it.
+const FILENAME_PATTERN = /^(\d{4}-\d{1,2}-\d{1,2})-?(.*?).mdx?$/;
 function truncate(fileString, truncateMarker) {
     return fileString.split(truncateMarker, 1).shift();
 }
 exports.truncate = truncate;
-async function generateReleases(releaseDir, { siteConfig, siteDir }, options) {
+async function generateHighlights(highlightDir, { siteConfig, siteDir }, options) {
     const { include, routeBasePath, truncateMarker } = options;
-    if (!fs_extra_1.default.existsSync(releaseDir)) {
+    if (!fs_extra_1.default.existsSync(highlightDir)) {
         return [];
     }
     const { baseUrl = '' } = siteConfig;
-    const releaseFiles = await globby_1.default(include, {
-        cwd: releaseDir,
+    const highlightFiles = await globby_1.default(include, {
+        cwd: highlightDir,
     });
-    const releases = [];
-    await Promise.all(releaseFiles.map(async (relativeSource) => {
-        const source = path_1.default.join(releaseDir, relativeSource);
+    const highlights = [];
+    await Promise.all(highlightFiles.map(async (relativeSource) => {
+        const source = path_1.default.join(highlightDir, relativeSource);
         const aliasedSource = utils_1.aliasedSitePath(source, siteDir);
         const fileString = await fs_extra_1.default.readFile(source, 'utf-8');
         const readingStats = reading_time_1.default(fileString);
         const { frontMatter, content, excerpt } = utils_1.parse(fileString);
+        const fileName = path_1.default.basename(relativeSource);
+        const fileNameMatch = fileName.match(FILENAME_PATTERN);
         if (frontMatter.draft && process.env.NODE_ENV === 'production') {
             return;
         }
-        let linkName = relativeSource.replace(/\.mdx?$/, '');
-        let seriesPosition = frontMatter.series_position;
+        let date = fileNameMatch ? new Date(fileNameMatch[1]) : new Date(Date.now());
+        let description = frontMatter.description || excerpt;
+        let id = frontMatter.id || frontMatter.title;
+        let linkName = fileNameMatch ? fileNameMatch[2] : frontMatter.id;
+        let tags = frontMatter.tags || [];
         let title = frontMatter.title || linkName;
-        let coverLabel = frontMatter.cover_label || title;
-        releases.push({
-            id: frontMatter.id || frontMatter.title,
+        highlights.push({
+            id: id,
             metadata: {
-                coverLabel: coverLabel,
-                description: frontMatter.description || excerpt,
+                date: date,
+                description: description,
                 permalink: utils_1.normalizeUrl([
                     baseUrl,
                     routeBasePath,
                     frontMatter.id || linkName,
                 ]),
                 readingTime: readingStats.text,
-                seriesPosition: seriesPosition,
-                sort: frontMatter.sort,
                 source: aliasedSource,
+                tags: tags,
                 title: title,
                 truncated: (truncateMarker === null || truncateMarker === void 0 ? void 0 : truncateMarker.test(content)) || false,
             },
         });
     }));
-    return releases;
+    return highlights.sort((a, b) => b.metadata.date.getTime() - a.metadata.date.getTime());
 }
-exports.generateReleases = generateReleases;
-function linkify(fileContent, siteDir, releasePath, releases) {
+exports.generateHighlights = generateHighlights;
+function linkify(fileContent, siteDir, highlightPath, highlights) {
     let fencedBlock = false;
     const lines = fileContent.split('\n').map(line => {
         if (line.trim().startsWith('```')) {
@@ -70,15 +76,15 @@ function linkify(fileContent, siteDir, releasePath, releases) {
         let mdMatch = mdRegex.exec(modifiedLine);
         while (mdMatch !== null) {
             const mdLink = mdMatch[1];
-            const aliasedPostSource = `@site/${path_1.default.relative(siteDir, path_1.default.resolve(releasePath, mdLink))}`;
-            let releasePermalink = null;
-            releases.forEach(release => {
-                if (release.metadata.source === aliasedPostSource) {
-                    releasePermalink = release.metadata.permalink;
+            const aliasedPostSource = `@site/${path_1.default.relative(siteDir, path_1.default.resolve(highlightPath, mdLink))}`;
+            let highlightPermalink = null;
+            highlights.forEach(highlight => {
+                if (highlight.metadata.source === aliasedPostSource) {
+                    highlightPermalink = highlight.metadata.permalink;
                 }
             });
-            if (releasePermalink) {
-                modifiedLine = modifiedLine.replace(mdLink, releasePermalink);
+            if (highlightPermalink) {
+                modifiedLine = modifiedLine.replace(mdLink, highlightPermalink);
             }
             mdMatch = mdRegex.exec(modifiedLine);
         }

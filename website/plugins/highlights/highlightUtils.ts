@@ -1,4 +1,4 @@
-import {PluginOptions, Release} from './types';
+import {PluginOptions, Highlight} from './types';
 import {LoadContext} from '@docusaurus/types';
 
 import _ from 'lodash';
@@ -8,59 +8,66 @@ import path from 'path';
 import {parse, normalizeUrl, aliasedSitePath} from '@docusaurus/utils';
 import readingTime from 'reading-time';
 
+// YYYY-MM-DD-{name}.mdx?
+// Prefer named capture, but older Node versions do not support it.
+const FILENAME_PATTERN = /^(\d{4}-\d{1,2}-\d{1,2})-?(.*?).mdx?$/;
+
 export function truncate(fileString: string, truncateMarker: RegExp) {
   return fileString.split(truncateMarker, 1).shift()!;
 }
 
-export async function generateReleases(
-  releaseDir: string,
+export async function generateHighlights(
+  highlightDir: string,
   {siteConfig, siteDir}: LoadContext,
   options: PluginOptions,
 ) {
   const {include, routeBasePath, truncateMarker} = options;
 
-  if (!fs.existsSync(releaseDir)) {
+  if (!fs.existsSync(highlightDir)) {
     return [];
   }
 
   const {baseUrl = ''} = siteConfig;
-  const releaseFiles = await globby(include, {
-    cwd: releaseDir,
+  const highlightFiles = await globby(include, {
+    cwd: highlightDir,
   });
 
-  const releases: Release[] = [];
+  const highlights: Highlight[] = [];
 
   await Promise.all(
-    releaseFiles.map(async (relativeSource: string) => {
-      const source = path.join(releaseDir, relativeSource);
+    highlightFiles.map(async (relativeSource: string) => {
+      const source = path.join(highlightDir, relativeSource);
       const aliasedSource = aliasedSitePath(source, siteDir);
       const fileString = await fs.readFile(source, 'utf-8');
       const readingStats = readingTime(fileString);
       const {frontMatter, content, excerpt} = parse(fileString);
+      const fileName = path.basename(relativeSource);
+      const fileNameMatch = fileName.match(FILENAME_PATTERN);
 
       if (frontMatter.draft && process.env.NODE_ENV === 'production') {
         return;
       }
 
-      let linkName = relativeSource.replace(/\.mdx?$/, '');
-      let seriesPosition = frontMatter.series_position;
+      let date = fileNameMatch ? new Date(fileNameMatch[1]) : new Date(Date.now());
+      let description = frontMatter.description || excerpt;
+      let id = frontMatter.id || frontMatter.title;
+      let linkName = fileNameMatch ? fileNameMatch[2] : frontMatter.id;
+      let tags = frontMatter.tags || [];
       let title = frontMatter.title || linkName;
-      let coverLabel = frontMatter.cover_label || title;
 
-      releases.push({
-        id: frontMatter.id || frontMatter.title,
+      highlights.push({
+        id: id,
         metadata: {
-          coverLabel: coverLabel,
-          description: frontMatter.description || excerpt,
+          date: date,
+          description: description,
           permalink: normalizeUrl([
             baseUrl,
             routeBasePath,
             frontMatter.id || linkName,
           ]),
           readingTime: readingStats.text,
-          seriesPosition: seriesPosition,
-          sort: frontMatter.sort,
           source: aliasedSource,
+          tags: tags,
           title: title,
           truncated: truncateMarker?.test(content) || false,
         },
@@ -68,14 +75,14 @@ export async function generateReleases(
     }),
   );
 
-  return releases;
+  return highlights.sort((a, b) => b.metadata.date.getTime() - a.metadata.date.getTime());
 }
 
 export function linkify(
   fileContent: string,
   siteDir: string,
-  releasePath: string,
-  releases: Release[],
+  highlightPath: string,
+  highlights: Highlight[],
 ) {
   let fencedBlock = false;
   const lines = fileContent.split('\n').map(line => {
@@ -93,18 +100,18 @@ export function linkify(
       const mdLink = mdMatch[1];
       const aliasedPostSource = `@site/${path.relative(
         siteDir,
-        path.resolve(releasePath, mdLink),
+        path.resolve(highlightPath, mdLink),
       )}`;
-      let releasePermalink = null;
+      let highlightPermalink = null;
 
-      releases.forEach(release => {
-        if (release.metadata.source === aliasedPostSource) {
-          releasePermalink = release.metadata.permalink;
+      highlights.forEach(highlight => {
+        if (highlight.metadata.source === aliasedPostSource) {
+          highlightPermalink = highlight.metadata.permalink;
         }
       });
 
-      if (releasePermalink) {
-        modifiedLine = modifiedLine.replace(mdLink, releasePermalink);
+      if (highlightPermalink) {
+        modifiedLine = modifiedLine.replace(mdLink, highlightPermalink);
       }
 
       mdMatch = mdRegex.exec(modifiedLine);

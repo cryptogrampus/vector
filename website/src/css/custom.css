@@ -578,6 +578,7 @@ ul.connected-list > li > .badges .badge:first-child {
   margin-left: 0;
 }
 
+ul.connected-list > li > h2,
 ul.connected-list > li > h3,
 ul.connected-list > li > h4,
 ul.connected-list > li > h5,
@@ -585,6 +586,7 @@ ul.connected-list > li > h6 {
   margin-bottom: 1em;
 }
 
+ul.connected-list > li > h2 .hash-link,
 ul.connected-list > li > h3 .hash-link,
 ul.connected-list > li > h4 .hash-link,
 ul.connected-list > li > h5 .hash-link,
@@ -593,6 +595,7 @@ ul.connected-list > li > h6 .hash-link {
   padding-right: 3em;
 }
 
+ul.connected-list > li:hover > h2 > .hash-link,
 ul.connected-list > li:hover > h3 > .hash-link,
 ul.connected-list > li:hover > h4 > .hash-link,
 ul.connected-list > li:hover > h5 > .hash-link,
@@ -634,9 +637,10 @@ ul.connected-list.connected-list--compact > li {
   padding-bottom: calc( var(--ifm-spacing-vertical) / 4 );
 }
 
-ul.connected-list.connected-list--compact > li > h4 {
-  font-weight: normal;
-  margin: 0;
+ul.connected-list.connected-list--compact > li h2,
+ul.connected-list.connected-list--compact > li h3,
+ul.connected-list.connected-list--compact > li h4 {
+  margin-bottom: 0.5em;
 }
 
 ul.connected-list.connected-list--compact > li:last-child > h4 {
@@ -654,10 +658,6 @@ ul.connected-list.connected-list--hover > li:hover {
  * system is 12 columns wide. Therefore, we should increase and decrease
  * sizes by 95px.
  */
-
-.container > *:first-child {
-  padding-left: 0 !important;
-}
 
 .container--flush {
   padding-left: 0;
@@ -995,8 +995,8 @@ header h1 {
 
 .hero.hero--clean {
   border-bottom: 0px none;
-  min-height: auto;
-  padding-bottom: 0;
+  min-height: none;
+  margin-bottom: 0;
 }
 
 .hero.hero--full-height {
@@ -1113,6 +1113,7 @@ input[type="text"]:focus {
 
 input.input--block {
   display: block !important;
+  max-width: none !important;
   width: 100%;
 }
 
