@@ -4,7 +4,9 @@ id: windows-support
 title: "Windows Support Is Here!"
 description: "Bringing the performance and reliability of Vector to Windows"
 author_github: https://github.com/binarylogic
-tags: ["type: announcement", "domain: platforms", "platform: windows"]
+pr_numbers: [1205]
+release: "0.5.0"
+tags: ["type: new feature", "domain: platforms", "platform: windows"]
 ---
 
 We're excited to announce that Vector can now be installed on Windows!

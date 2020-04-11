@@ -80,9 +80,7 @@
 }
 
 .releaseSelect {
-  font-size: 0.8em;
-  margin: calc(var(--ifm-spacing-vertical) * 2) auto var(--ifm-spacing-vertical) auto;
-  width: 500px;
+  margin: calc(var(--ifm-spacing-vertical) * 2) auto;
 }
 
 .downloadTableContainer {
@@ -145,7 +143,7 @@
 }
 
 .downloadFiles > li:hover {
-  background: var(--ifm-panel-background);
+  background-color: var(--ifm-panel-background-color);
 }
 
 .downloadFiles > li:last-child {

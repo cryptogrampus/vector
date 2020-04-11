@@ -38,15 +38,12 @@ export interface Release {
 }
 
 export interface ReleaseMetaData {
-  coverLabel: string;
   description: string;
   nextItem?: Paginator;
   permalink: string;
   prevItem?: Paginator;
-  readingTime: string;
-  seriesPosition: number;
-  sort: number;
   source: string;
   title: string;
   truncated: boolean;
+  version: string;
 }

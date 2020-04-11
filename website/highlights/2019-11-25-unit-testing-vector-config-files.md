@@ -4,7 +4,9 @@ id: unit-testing-vector-config-files
 title: "Unit Testing Your Vector Config Files"
 description: "Treating your Vector configuration files as code"
 author_github: https://github.com/binarylogic
-tags: ["type: announcement", "domain: config"]
+pr_numbers: [1220]
+release: "0.6.0"
+tags: ["type: new feature", "domain: config"]
 ---
 
 Today we're excited to announce beta support for unit testing Vector

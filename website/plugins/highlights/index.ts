@@ -6,6 +6,9 @@ import {
   PluginOptions,
   Highlight,
   HighlightContent,
+  HighlightItemsToMetadata,
+  HighlightTags,
+  TagsModule,
 } from './types';
 import {
   LoadContext,
@@ -22,6 +25,8 @@ const DEFAULT_OPTIONS: PluginOptions = {
   include: ['*.md', '*.mdx'], // Extensions to include.
   highlightComponent: '@theme/HighlightPage',
   highlightListComponent: '@theme/HighlightListPage',
+  highlightTagComponent: '@theme/HighlightTagPage',
+  highlightTagListComponent: '@theme/HighlightTagListPage',
   remarkPlugins: [],
   rehypePlugins: [],
   truncateMarker: /<!--\s*(truncate)\s*-->/, // Regex.
@@ -50,6 +55,10 @@ export default function pluginContentHighlight(
     },
 
     async loadContent() {
+      const {routeBasePath} = options;
+      const {siteConfig: {baseUrl = ''}} = context;
+      const basePageUrl = normalizeUrl([baseUrl, routeBasePath]);
+
       //
       // Highlights
       //
@@ -76,11 +85,53 @@ export default function pluginContentHighlight(
       });
 
       //
+      // Highlight tags
+      //
+
+      const highlightTags: HighlightTags = {};
+      const tagsPath = normalizeUrl([basePageUrl, 'tags']);
+      highlights.forEach(highlight => {
+        const {tags} = highlight.metadata;
+        if (!tags || tags.length === 0) {
+          // TODO: Extract tags out into a separate plugin.
+          // eslint-disable-next-line no-param-reassign
+          highlight.metadata.tags = [];
+          return;
+        }
+
+        // eslint-disable-next-line no-param-reassign
+        highlight.metadata.tags = tags.map(tag => {
+          if (typeof tag === 'string') {
+            const normalizedTag = _.kebabCase(tag);
+            const permalink = normalizeUrl([tagsPath, normalizedTag]);
+            if (!highlightTags[normalizedTag]) {
+              highlightTags[normalizedTag] = {
+                // Will only use the name of the first occurrence of the tag.
+                name: tag.toLowerCase(),
+                items: [],
+                permalink,
+              };
+            }
+
+            highlightTags[normalizedTag].items.push(highlight.id);
+
+            return {
+              label: tag,
+              permalink,
+            };
+          } else {
+            return tag;
+          }
+        });
+      });
+
+      //
       // Return
       //
 
       return {
         highlights,
+        highlightTags,
       };
     },
 
@@ -102,13 +153,22 @@ export default function pluginContentHighlight(
       const {
         highlightComponent,
         highlightListComponent,
+        highlightTagComponent,
+        highlightTagListComponent,
       } = options;
 
+      const aliasedSource = (source: string) =>
+        `~highlight/${path.relative(dataDir, source)}`;
       const {addRoute, createData} = actions;
-      const {highlights} = highlightContents;
+      const {highlights, highlightTags} = highlightContents;
       const {routeBasePath} = options;
       const {siteConfig: {baseUrl = ''}} = context;
       const basePageUrl = normalizeUrl([baseUrl, routeBasePath]);
+
+      const highlightItemsToMetadata: HighlightItemsToMetadata = {};
+      highlights.map(highlight => {
+        highlightItemsToMetadata[highlight.id] = highlight.metadata;
+      });
 
       //
       // Highlights page
@@ -132,6 +192,67 @@ export default function pluginContentHighlight(
               },
             };
           }),
+        },
+      });
+
+      //
+      // Highlight tags
+      //
+
+      const tagsPath = normalizeUrl([basePageUrl, 'tags']);
+      const tagsModule: TagsModule = {};
+
+      await Promise.all(
+        Object.keys(highlightTags).map(async tag => {
+          const {name, items, permalink} = highlightTags[tag];
+
+          tagsModule[tag] = {
+            allTagsPath: tagsPath,
+            slug: tag,
+            name,
+            count: items.length,
+            permalink,
+          };
+
+          const tagsMetadataPath = await createData(
+            `${docuHash(permalink)}.json`,
+            JSON.stringify(tagsModule[tag], null, 2),
+          );
+
+          addRoute({
+            path: permalink,
+            component: highlightTagComponent,
+            exact: true,
+            modules: {
+              items: items.map(highlightID => {
+                const metadata = highlightItemsToMetadata[highlightID];
+                return {
+                  content: {
+                    __import: true,
+                    path: metadata.source,
+                    query: {
+                      truncated: true,
+                    },
+                  },
+                };
+              }),
+              metadata: aliasedSource(tagsMetadataPath),
+            },
+          });
+        }),
+      );
+
+      const tagsListPath = await createData(
+        `${docuHash(`${tagsPath}-tags`)}.json`,
+        JSON.stringify(tagsModule, null, 2),
+      );
+
+      addRoute({
+        path: tagsPath,
+        component: highlightTagListComponent,
+        exact: true,
+        modules: {
+          tags: aliasedSource(tagsListPath),
         },
       });
 

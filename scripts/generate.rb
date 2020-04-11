@@ -293,39 +293,12 @@ metadata.sinks_list.
 #
 
 metadata.releases_list.each do |release|
-  template_path = "#{PAGES_ROOT}/releases/#{release.version}/download.js"
+  template_path = "#{RELEASES_ROOT}/#{release.version}.md"
 
   write_new_file(
     template_path,
     <<~EOF
-    import React from 'react';
-
-    import ReleaseDownload from '@site/src/components/ReleaseDownload';
-
-    function Download() {
-      return <ReleaseDownload version="#{release.version}" />
-    }
-
-    export default Download;
-    EOF
-  )
-
-  template_path = "#{PAGES_ROOT}/releases/#{release.version}.js"
-
-  write_new_file(
-    template_path,
-    <<~EOF
-    import React from 'react';
-
-    import ReleaseNotes from '@site/src/components/ReleaseNotes';
-
-    function ReleaseNotesPage() {
-      const version = "#{release.version}";
-
-      return <ReleaseNotes version={version} />;
-    }
-
-    export default ReleaseNotesPage;
+    # Title
     EOF
   )
 end

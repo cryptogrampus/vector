@@ -1,10 +1,12 @@
 ---
 last_modified_on: "2020-03-31"
 id: ec2-metadata
-title: "EC2 Metadata Enrichments"
+title: "New AWS EC2 Medata Transform"
 description: "Enrich your events with EC2 metadata"
 author_github: https://github.com/Jeffail
-tags: ["type: announcement", "domain: transforms", "transform: ec2_metadata"]
+pr_numbers: [1325]
+release: "0.6.0"
+tags: ["type: new feature", "domain: transforms", "transform: aws_ec2_metadata"]
 ---
 
 Are your events the laughing-stock of the data warehouse? Then enrich them with

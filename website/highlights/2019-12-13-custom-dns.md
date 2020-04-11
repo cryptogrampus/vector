@@ -4,7 +4,9 @@ id: custom-dns
 title: "Use Custom DNS Servers"
 description: "Point Vector to custom DNS servers"
 author_github: https://github.com/Jeffail
-tags: ["type: announcement", "domain: networking"]
+pr_numbers: [1118, 1362, 1371, 1400, 1451]
+release: "0.6.0"
+tags: ["type: new feature", "domain: networking"]
 ---
 
 We're modern progressive parents and aren't about to tell Vector who it can and

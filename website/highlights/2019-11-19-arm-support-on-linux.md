@@ -4,7 +4,9 @@ id: arm-support-on-linux
 title: "ARMv7 & ARM64 Support on Linux"
 description: "These architectures are widely used in embeded devices & servers"
 author_github: https://github.com/binarylogic
-tags: ["type: announcement", "domain: platforms", "platform: arm"]
+pr_numbers: [1054, 1292]
+release: "0.4.0"
+tags: ["type: new feature", "domain: platforms", "platform: arm"]
 ---
 
 Vector now supports [ARM architectures][urls.arm] on the Linux platform! These

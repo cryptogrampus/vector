@@ -3,7 +3,7 @@
  */
 
 .alert {
-  background: var(--ifm-panel-background) !important;
+  background-color: var(--ifm-panel-background-color) !important;
   border: 1px solid var(--ifm-panel-border-color) !important;
   border-left: 6px solid var(--ifm-alert-background-color) !important;
   border-radius: 0;

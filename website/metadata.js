@@ -2492,6 +2492,566 @@ module.exports = {
       "title": "Integrate"
     }
   },
+  "highlights": [
+    {
+      "author_github": "https://github.com/binarylogic",
+      "date": "2019-11-19",
+      "description": "Vector now supports ARM architectures on the Linux platform! These\narchitectures are widely used in embeded devices and recently started to get\ntraction on servers. To get started, you can follow the installation\ninstructions for your preferred method:",
+      "id": "arm-support-on-linux",
+      "path": "website/highlights/2019-11-19-arm-support-on-linux.md",
+      "permalink": "https://vector.dev/highlights/arm-support-on-linux/",
+      "tags": [
+        "type: new feature",
+        "domain: platforms",
+        "platform: arm"
+      ],
+      "title": "ARMv7 & ARM64 Support on Linux"
+    },
+    {
+      "author_github": "https://github.com/binarylogic",
+      "date": "2019-11-21",
+      "description": "We're excited to announce that Vector can now be installed on Windows!\nTo get started, check out the Windows installation instructions\nor head over to the releases section and download the\nappropriate Windows archive. Just like on Linux, installation on Windows is\nquick and easy. Let us know what you think!.",
+      "id": "windows-support",
+      "path": "website/highlights/2019-11-21-windows-support.md",
+      "permalink": "https://vector.dev/highlights/windows-support/",
+      "tags": [
+        "type: new feature",
+        "domain: platforms",
+        "platform: windows"
+      ],
+      "title": "Windows Support Is Here!"
+    },
+    {
+      "author_github": "https://github.com/binarylogic",
+      "date": "2019-11-25",
+      "description": "Today we're excited to announce beta support for unit testing Vector\nconfigurations, allowing you to define tests directly within your Vector\nconfiguration file. These tests are used to assert the output from topologies of\ntransform components given certain input events, ensuring\nthat your configuration behavior does not regress; a very powerful feature for\nmission-critical production pipelines that are collaborated on.",
+      "id": "unit-testing-vector-config-files",
+      "path": "website/highlights/2019-11-25-unit-testing-vector-config-files.md",
+      "permalink": "https://vector.dev/highlights/unit-testing-vector-config-files/",
+      "tags": [
+        "type: new feature",
+        "domain: config"
+      ],
+      "title": "Unit Testing Your Vector Config Files"
+    },
+    {
+      "author_github": "https://github.com/Jeffail",
+      "date": "2019-12-13",
+      "description": "We're modern progressive parents and aren't about to tell Vector who it can and\ncan't hang out with. As such, we're now allowing you to specify custom DNS\nservers in your configs.",
+      "id": "custom-dns",
+      "path": "website/highlights/2019-12-13-custom-dns.md",
+      "permalink": "https://vector.dev/highlights/custom-dns/",
+      "tags": [
+        "type: new feature",
+        "domain: networking"
+      ],
+      "title": "Use Custom DNS Servers"
+    },
+    {
+      "author_github": "https://github.com/Jeffail",
+      "date": "2019-12-14",
+      "description": "We're currently experimenting with Kubernetes integration\nThis functionality is undocumented and not yet ready for general use. However,\nwe consider it to be at Alpha stage and suitable for adventurous early adopters\nto try out.",
+      "id": "kubernetes-source-alpha",
+      "path": "website/highlights/2019-12-14-kubernetes-source-alpha.md",
+      "permalink": "https://vector.dev/highlights/kubernetes-source-alpha/",
+      "tags": [
+        "type: new feature",
+        "domain: source",
+        "source: kubernetes"
+      ],
+      "title": "New Kubernetes Source (alpha)"
+    },
+    {
+      "author_github": "https://github.com/Jeffail",
+      "date": "2019-12-16",
+      "description": "Are your events the laughing-stock of the data warehouse? Then enrich them with\nour brand spanking new `aws_ec2_metadata` transform.",
+      "id": "ec2-metadata",
+      "path": "website/highlights/2019-12-16-ec2-metadata.md",
+      "permalink": "https://vector.dev/highlights/ec2-metadata/",
+      "tags": [
+        "type: new feature",
+        "domain: transforms",
+        "transform: aws_ec2_metadata"
+      ],
+      "title": "New AWS EC2 Medata Transform"
+    },
+    {
+      "author_github": "https://github.com/Jeffail",
+      "date": "2020-01-07",
+      "description": "We love Prometheus, but we also love options\nand so we've added a `prometheus` source to let you\nsend Prometheus format metrics anywhere you like.",
+      "id": "prometheus-source.md",
+      "path": "website/highlights/2020-01-07-prometheus-source.md",
+      "permalink": "https://vector.dev/highlights/prometheus-source.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sources",
+        "source: prometheus"
+      ],
+      "title": "New Prometheus Source"
+    },
+    {
+      "author_github": "https://github.com/a-rodin",
+      "date": "2020-01-30",
+      "description": "",
+      "id": "sematext-logs-sink.md",
+      "path": "website/highlights/2020-01-30-sematext-logs-sink.md",
+      "permalink": "https://vector.dev/highlights/sematext-logs-sink.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sources",
+        "source: vector"
+      ],
+      "title": "The Vector Source Now Accepts Metrics"
+    },
+    {
+      "author_github": "https://github.com/a-rodin",
+      "date": "2020-02-05",
+      "description": "",
+      "id": "logdna-sink.md",
+      "path": "website/highlights/2020-02-05-logdna-sink.md",
+      "permalink": "https://vector.dev/highlights/logdna-sink.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sources",
+        "source: vector"
+      ],
+      "title": "The Vector Source Now Accepts Metrics"
+    },
+    {
+      "author_github": "https://github.com/a-rodin",
+      "date": "2020-02-05",
+      "description": "",
+      "id": "vic-the-vector-mascot.md",
+      "path": "website/highlights/2020-02-05-vic-the-vector-mascot.md",
+      "permalink": "https://vector.dev/highlights/vic-the-vector-mascot.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sources",
+        "source: vector"
+      ],
+      "title": "The Vector Source Now Accepts Metrics"
+    },
+    {
+      "author_github": "https://github.com/a-rodin",
+      "date": "2020-02-07",
+      "description": "",
+      "id": "multi-config-files.md",
+      "path": "website/highlights/2020-02-07-multi-config-files.md",
+      "permalink": "https://vector.dev/highlights/multi-config-files.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sources",
+        "source: vector"
+      ],
+      "title": "The Vector Source Now Accepts Metrics"
+    },
+    {
+      "author_github": "https://github.com/a-rodin",
+      "date": "2020-02-10",
+      "description": "",
+      "id": "humio-logs-sink.md",
+      "path": "website/highlights/2020-02-10-humio-logs-sink.md",
+      "permalink": "https://vector.dev/highlights/humio-logs-sink.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sources",
+        "source: vector"
+      ],
+      "title": "The Vector Source Now Accepts Metrics"
+    },
+    {
+      "author_github": "https://github.com/a-rodin",
+      "date": "2020-02-11",
+      "description": "",
+      "id": "improved-syslog-parsing.md",
+      "path": "website/highlights/2020-02-11-improved-syslog-parsing.md",
+      "permalink": "https://vector.dev/highlights/improved-syslog-parsing.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sources",
+        "source: vector"
+      ],
+      "title": "The Vector Source Now Accepts Metrics"
+    },
+    {
+      "author_github": "https://github.com/a-rodin",
+      "date": "2020-02-14",
+      "description": "",
+      "id": "global-log-schema.md",
+      "path": "website/highlights/2020-02-14-global-log-schema.md",
+      "permalink": "https://vector.dev/highlights/global-log-schema.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sources",
+        "source: vector"
+      ],
+      "title": "The Vector Source Now Accepts Metrics"
+    },
+    {
+      "author_github": "https://github.com/a-rodin",
+      "date": "2020-02-17",
+      "description": "",
+      "id": "add-fields-transform-templating.md",
+      "path": "website/highlights/2020-02-17-add-fields-transform-templating.md",
+      "permalink": "https://vector.dev/highlights/add-fields-transform-templating.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sources",
+        "source: vector"
+      ],
+      "title": "The Vector Source Now Accepts Metrics"
+    },
+    {
+      "author_github": "https://github.com/a-rodin",
+      "date": "2020-02-17",
+      "description": "",
+      "id": "loki-sink.md",
+      "path": "website/highlights/2020-02-17-loki-sink.md",
+      "permalink": "https://vector.dev/highlights/loki-sink.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sources",
+        "source: vector"
+      ],
+      "title": "The Vector Source Now Accepts Metrics"
+    },
+    {
+      "author_github": "https://github.com/a-rodin",
+      "date": "2020-02-18",
+      "description": "",
+      "id": "influxdb-metrics-sink.md",
+      "path": "website/highlights/2020-02-18-influxdb-metrics-sink.md",
+      "permalink": "https://vector.dev/highlights/influxdb-metrics-sink.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sources",
+        "source: vector"
+      ],
+      "title": "The Vector Source Now Accepts Metrics"
+    },
+    {
+      "author_github": "https://github.com/a-rodin",
+      "date": "2020-02-20",
+      "description": "",
+      "id": "gcp-cloud-storage-sink.md",
+      "path": "website/highlights/2020-02-20-gcp-cloud-storage-sink.md",
+      "permalink": "https://vector.dev/highlights/gcp-cloud-storage-sink.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sources",
+        "source: vector"
+      ],
+      "title": "The Vector Source Now Accepts Metrics"
+    },
+    {
+      "author_github": "https://github.com/a-rodin",
+      "date": "2020-02-21",
+      "description": "- contains\n- prefix\n- regex\n- ends_with\n- is_log\n- is_metric\n- etc\n",
+      "id": "file-source-multiline-support.md",
+      "path": "website/highlights/2020-02-21-file-source-multiline-support.md",
+      "permalink": "https://vector.dev/highlights/file-source-multiline-support.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sources",
+        "source: vector"
+      ],
+      "title": "The Vector Source Now Accepts Metrics"
+    },
+    {
+      "author_github": "https://github.com/a-rodin",
+      "date": "2020-02-24",
+      "description": "",
+      "id": "rename-fields-transform.md",
+      "path": "website/highlights/2020-02-24-rename-fields-transform.md",
+      "permalink": "https://vector.dev/highlights/rename-fields-transform.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sources",
+        "source: vector"
+      ],
+      "title": "The Vector Source Now Accepts Metrics"
+    },
+    {
+      "author_github": "https://github.com/a-rodin",
+      "date": "2020-02-24",
+      "description": "",
+      "id": "swimlanes-transform.md",
+      "path": "website/highlights/2020-02-24-swimlanes-transform.md",
+      "permalink": "https://vector.dev/highlights/swimlanes-transform.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sources",
+        "source: vector"
+      ],
+      "title": "The Vector Source Now Accepts Metrics"
+    },
+    {
+      "author_github": "https://github.com/a-rodin",
+      "date": "2020-02-27",
+      "description": "",
+      "id": "nixos-support.md",
+      "path": "website/highlights/2020-02-27-nixos-support.md",
+      "permalink": "https://vector.dev/highlights/nixos-support.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sources",
+        "source: vector"
+      ],
+      "title": "The Vector Source Now Accepts Metrics"
+    },
+    {
+      "author_github": "https://github.com/a-rodin",
+      "date": "2020-02-28",
+      "description": "",
+      "id": "custom-vector-builds.md",
+      "path": "website/highlights/2020-02-28-custom-vector-builds.md",
+      "permalink": "https://vector.dev/highlights/custom-vector-builds.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sources",
+        "source: vector"
+      ],
+      "title": "The Vector Source Now Accepts Metrics"
+    },
+    {
+      "author_github": "https://github.com/a-rodin",
+      "date": "2020-03-03",
+      "description": "- contains\n- prefix\n- regex\n- ends_with\n- etc\n",
+      "id": "privacy-policy.md",
+      "path": "website/highlights/2020-03-03-privacy-policy.md",
+      "permalink": "https://vector.dev/highlights/privacy-policy.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sources",
+        "source: vector"
+      ],
+      "title": "The Vector Source Now Accepts Metrics"
+    },
+    {
+      "author_github": "https://github.com/a-rodin",
+      "date": "2020-03-04",
+      "description": "- new api\n- metrics events\n- timers\n- guides\n",
+      "id": "encoding-whitelist-blacklist.md",
+      "path": "website/highlights/2020-03-04-encoding-whitelist-blacklist.md",
+      "permalink": "https://vector.dev/highlights/encoding-whitelist-blacklist.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sources",
+        "source: vector"
+      ],
+      "title": "The Vector Source Now Accepts Metrics"
+    },
+    {
+      "author_github": "https://github.com/a-rodin",
+      "date": "2020-03-09",
+      "description": "",
+      "id": "kafka-sink-compression.md",
+      "path": "website/highlights/2020-03-09-kafka-sink-compression.md",
+      "permalink": "https://vector.dev/highlights/kafka-sink-compression.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sources",
+        "source: vector"
+      ],
+      "title": "The Vector Source Now Accepts Metrics"
+    },
+    {
+      "author_github": "https://github.com/a-rodin",
+      "date": "2020-03-10",
+      "description": "",
+      "id": "dedupe-transform.md",
+      "path": "website/highlights/2020-03-10-dedupe-transform.md",
+      "permalink": "https://vector.dev/highlights/dedupe-transform.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sources",
+        "source: vector"
+      ],
+      "title": "The Vector Source Now Accepts Metrics"
+    },
+    {
+      "author_github": "https://github.com/a-rodin",
+      "date": "2020-03-11",
+      "description": "- contains\n- prefix\n- regex\n- ends_with\n- etc\n",
+      "id": "tag-cardinality-limit-transform.md",
+      "path": "website/highlights/2020-03-11-tag-cardinality-limit-transform.md",
+      "permalink": "https://vector.dev/highlights/tag-cardinality-limit-transform.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sources",
+        "source: vector"
+      ],
+      "title": "The Vector Source Now Accepts Metrics"
+    },
+    {
+      "author_github": "https://github.com/a-rodin",
+      "date": "2020-03-11",
+      "description": "- new api\n- metrics events\n- timers\n- guides\n",
+      "id": "vector-sink-tls.md",
+      "path": "website/highlights/2020-03-11-vector-sink-tls.md",
+      "permalink": "https://vector.dev/highlights/vector-sink-tls.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sources",
+        "source: vector"
+      ],
+      "title": "The Vector Source Now Accepts Metrics"
+    },
+    {
+      "author_github": "https://github.com/a-rodin",
+      "date": "2020-03-12",
+      "description": "",
+      "id": "papertrail-sink.md",
+      "path": "website/highlights/2020-03-12-papertrail-sink.md",
+      "permalink": "https://vector.dev/highlights/papertrail-sink.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sources",
+        "source: vector"
+      ],
+      "title": "The Vector Source Now Accepts Metrics"
+    },
+    {
+      "author_github": "https://github.com/a-rodin",
+      "date": "2020-03-14",
+      "description": "",
+      "id": "honeycomb-sink.md",
+      "path": "website/highlights/2020-03-14-honeycomb-sink.md",
+      "permalink": "https://vector.dev/highlights/honeycomb-sink.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sources",
+        "source: vector"
+      ],
+      "title": "The Vector Source Now Accepts Metrics"
+    },
+    {
+      "author_github": "https://github.com/bruceg",
+      "date": "2020-03-19",
+      "description": "We love Prometheus, but we also love options\nand so we've added a `prometheus` source to let you\nsend Prometheus format metrics anywhere you like.",
+      "id": "apache-pulsar-sink.md",
+      "path": "website/highlights/2020-03-19-apache-pulsar-sink.md",
+      "permalink": "https://vector.dev/highlights/apache-pulsar-sink.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sinks",
+        "sink: pulsar"
+      ],
+      "title": "New Apache Pulsar Sink"
+    },
+    {
+      "author_github": "https://github.com/a-rodin",
+      "date": "2020-03-23",
+      "description": "",
+      "id": "datadog-logs-sink.md",
+      "path": "website/highlights/2020-03-23-datadog-logs-sink.md",
+      "permalink": "https://vector.dev/highlights/datadog-logs-sink.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sources",
+        "source: vector"
+      ],
+      "title": "The Vector Source Now Accepts Metrics"
+    },
+    {
+      "author_github": "https://github.com/bruceg",
+      "date": "2020-03-31",
+      "description": "We love Prometheus, but we also love options\nand so we've added a `prometheus` source to let you\nsend Prometheus format metrics anywhere you like.",
+      "id": "filter-transform.md",
+      "path": "website/highlights/2020-03-31-filter-transform.md",
+      "permalink": "https://vector.dev/highlights/filter-transform.md/",
+      "tags": [
+        "type: new feature",
+        "domain: transforms",
+        "transform: filter"
+      ],
+      "title": "New Filter Transform"
+    },
+    {
+      "author_github": "https://github.com/a-rodin",
+      "date": "2020-03-31",
+      "description": "",
+      "id": "guides-section.md",
+      "path": "website/highlights/2020-03-31-guides-section.md",
+      "permalink": "https://vector.dev/highlights/guides-section.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sources",
+        "source: vector"
+      ],
+      "title": "The Vector Source Now Accepts Metrics"
+    },
+    {
+      "author_github": "https://github.com/a-rodin",
+      "date": "2020-04-01",
+      "description": "- contains\n- prefix\n- regex\n- ends_with\n- is_log\n- is_metric\n- etc\n",
+      "id": "kubernetes-pod-metadata-transform.md",
+      "path": "website/highlights/2020-04-01-kubernetes-pod-metadata-transform.md",
+      "permalink": "https://vector.dev/highlights/kubernetes-pod-metadata-transform.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sources",
+        "source: vector"
+      ],
+      "title": "The Vector Source Now Accepts Metrics"
+    },
+    {
+      "author_github": "https://github.com/a-rodin",
+      "date": "2020-04-01",
+      "description": "- contains\n- prefix\n- regex\n- ends_with\n- is_log\n- is_metric\n- etc\n",
+      "id": "more-condition-predicates.md",
+      "path": "website/highlights/2020-04-01-more-condition-predicates.md",
+      "permalink": "https://vector.dev/highlights/more-condition-predicates.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sources",
+        "source: vector"
+      ],
+      "title": "The Vector Source Now Accepts Metrics"
+    },
+    {
+      "author_github": "https://github.com/a-rodin",
+      "date": "2020-04-07",
+      "description": "- new api\n- metrics events\n- timers\n- guides\n",
+      "id": "lua-transform-version-2.md",
+      "path": "website/highlights/2020-04-07-lua-transform-version-2.md",
+      "permalink": "https://vector.dev/highlights/lua-transform-version-2.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sources",
+        "source: vector"
+      ],
+      "title": "The Vector Source Now Accepts Metrics"
+    },
+    {
+      "author_github": "https://github.com/a-rodin",
+      "date": "2020-04-07",
+      "description": "",
+      "id": "vector-to-vector-metrics.md",
+      "path": "website/highlights/2020-04-07-vector-to-vector-metrics.md",
+      "permalink": "https://vector.dev/highlights/vector-to-vector-metrics.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sources",
+        "source: vector"
+      ],
+      "title": "The Vector Source Now Accepts Metrics"
+    },
+    {
+      "author_github": "https://github.com/a-rodin",
+      "date": "2020-04-11",
+      "description": "",
+      "id": "huge-performance-increase.md",
+      "path": "website/highlights/2020-04-11-huge-performance-increase.md",
+      "permalink": "https://vector.dev/highlights/huge-performance-increase.md/",
+      "tags": [
+        "type: new feature",
+        "domain: sources",
+        "source: vector"
+      ],
+      "title": "The Vector Source Now Accepts Metrics"
+    }
+  ],
   "installation": {
     "downloads": {
       "x86_64-unknown-linux-musl-tar-gz": {
@@ -2913,13 +3473,27 @@ module.exports = {
       }
     }
   },
+  "latest_highlight": {
+    "author_github": "https://github.com/a-rodin",
+    "date": "2020-04-11",
+    "description": "",
+    "id": "huge-performance-increase.md",
+    "path": "website/highlights/2020-04-11-huge-performance-increase.md",
+    "permalink": "https://vector.dev/highlights/huge-performance-increase.md/",
+    "tags": [
+      "type: new feature",
+      "domain: sources",
+      "source: vector"
+    ],
+    "title": "The Vector Source Now Accepts Metrics"
+  },
   "latest_post": {
     "author_github": "https://github.com/lukesteensen",
     "date": "2020-04-09",
     "description": "When we set out to build Vector, we knew that reliability and performance were\ntwo of our top priorities. We also knew that even the best of intentions would\nnot be enough to make certain those qualities were realized and reflected in our\nusers' production deployments. Since then, we've been continuously evolving and\nexpanding our approach to achieving that level of quality.",
     "id": "how-we-test-vector",
     "path": "website/blog/2020-04-09-how-we-test-vector.md",
-    "permalink": "https://vector.dev/blog/how-we-test-vector",
+    "permalink": "https://vector.dev/blog/how-we-test-vector/",
     "tags": [
       "type: post",
       "domain: testing"
@@ -3018,10 +3592,9 @@ module.exports = {
     ],
     "insertions_count": 31,
     "last_version": "0.8.1",
-    "posts": [
-
-    ],
+    "permalink": "https://vector.dev/releases/0.8.2/",
     "subtitle": "",
+    "title": "Release v0.8.2",
     "type": "initial dev",
     "type_url": "https://semver.org/#spec-item-4",
     "upgrade_guides": [
@@ -3030,17 +3603,6 @@ module.exports = {
     "version": "0.8.2"
   },
   "post_tags": [
-    "type: announcement",
-    "domain: platforms",
-    "platform: arm",
-    "platform: windows",
-    "domain: config",
-    "domain: networking",
-    "platform: kubernetes",
-    "domain: transforms",
-    "transform: ec2_metadata",
-    "domain: sources",
-    "source: prometheus",
     "type: post",
     "domain: testing"
   ],
@@ -3051,107 +3613,11 @@ module.exports = {
       "description": "Today we're very excited to open source the Vector project! Vector is a tool for building flexible and robust pipelines for your logs and metrics data. We're still in the early stages, but our goal with Vector is to dramatically simplify your observability infrastructure while making it easy to get more value from your data.",
       "id": "introducing-vector",
       "path": "website/blog/2019-06-28-introducing-vector.md",
-      "permalink": "https://vector.dev/blog/introducing-vector",
+      "permalink": "https://vector.dev/blog/introducing-vector/",
       "tags": [
-        "type: announcement"
+        "type: post"
       ],
       "title": "Introducing Vector"
-    },
-    {
-      "author_github": "https://github.com/binarylogic",
-      "date": "2019-11-19",
-      "description": "Vector now supports ARM architectures on the Linux platform! These\narchitectures are widely used in embeded devices and recently started to get\ntraction on servers. To get started, you can follow the installation\ninstructions for your preferred method:",
-      "id": "arm-support-on-linux",
-      "path": "website/blog/2019-11-19-arm-support-on-linux.md",
-      "permalink": "https://vector.dev/blog/arm-support-on-linux",
-      "tags": [
-        "type: announcement",
-        "domain: platforms",
-        "platform: arm"
-      ],
-      "title": "ARMv7 & ARM64 Support on Linux"
-    },
-    {
-      "author_github": "https://github.com/binarylogic",
-      "date": "2019-11-21",
-      "description": "We're excited to announce that Vector can now be installed on Windows!\nTo get started, check out the Windows installation instructions\nor head over to the releases section and download the\nappropriate Windows archive. Just like on Linux, installation on Windows is\nquick and easy. Let us know what you think!.",
-      "id": "windows-support",
-      "path": "website/blog/2019-11-21-windows-support.md",
-      "permalink": "https://vector.dev/blog/windows-support",
-      "tags": [
-        "type: announcement",
-        "domain: platforms",
-        "platform: windows"
-      ],
-      "title": "Windows Support Is Here!"
-    },
-    {
-      "author_github": "https://github.com/binarylogic",
-      "date": "2019-11-25",
-      "description": "Today we're excited to announce beta support for unit testing Vector\nconfigurations, allowing you to define tests directly within your Vector\nconfiguration file. These tests are used to assert the output from topologies of\ntransform components given certain input events, ensuring\nthat your configuration behavior does not regress; a very powerful feature for\nmission-critical production pipelines that are collaborated on.",
-      "id": "unit-testing-vector-config-files",
-      "path": "website/blog/2019-11-25-unit-testing-vector-config-files.md",
-      "permalink": "https://vector.dev/blog/unit-testing-vector-config-files",
-      "tags": [
-        "type: announcement",
-        "domain: config"
-      ],
-      "title": "Unit Testing Your Vector Config Files"
-    },
-    {
-      "author_github": "https://github.com/Jeffail",
-      "date": "2019-12-13",
-      "description": "We're modern progressive parents and aren't about to tell Vector who it can and\ncan't hang out with. As such, we're now allowing you to specify custom DNS\nservers in your configs.",
-      "id": "custom-dns",
-      "path": "website/blog/2019-12-13-custom-dns.md",
-      "permalink": "https://vector.dev/blog/custom-dns",
-      "tags": [
-        "type: announcement",
-        "domain: networking"
-      ],
-      "title": "Use Custom DNS Servers"
-    },
-    {
-      "author_github": "https://github.com/Jeffail",
-      "date": "2019-12-14",
-      "description": "We're currently experimenting with Kubernetes integration\nThis functionality is undocumented and not yet ready for general use. However,\nwe consider it to be at Alpha stage and suitable for adventurous early adopters\nto try out.",
-      "id": "kubernetes-source-alpha",
-      "path": "website/blog/2019-12-14-kubernetes-source-alpha.md",
-      "permalink": "https://vector.dev/blog/kubernetes-source-alpha",
-      "tags": [
-        "type: announcement",
-        "domain: platforms",
-        "platform: kubernetes"
-      ],
-      "title": "Alpha Kubernetes Source"
-    },
-    {
-      "author_github": "https://github.com/Jeffail",
-      "date": "2019-12-16",
-      "description": "Are your events the laughing-stock of the data warehouse? Then enrich them with\nour brand spanking new `aws_ec2_metadata` transform.",
-      "id": "ec2-metadata",
-      "path": "website/blog/2019-12-16-ec2-metadata.md",
-      "permalink": "https://vector.dev/blog/ec2-metadata",
-      "tags": [
-        "type: announcement",
-        "domain: transforms",
-        "transform: ec2_metadata"
-      ],
-      "title": "EC2 Metadata Enrichments"
-    },
-    {
-      "author_github": "https://github.com/Jeffail",
-      "date": "2020-01-07",
-      "description": "We love Prometheus, but we also love options\nand so we've added a `prometheus` source to let you\nsend Prometheus format metrics anywhere you like.",
-      "id": "prometheus-source",
-      "path": "website/blog/2020-01-07-prometheus-source.md",
-      "permalink": "https://vector.dev/blog/prometheus-source",
-      "tags": [
-        "type: announcement",
-        "domain: sources",
-        "source: prometheus"
-      ],
-      "title": "Prometheus Source"
     },
     {
       "author_github": "https://github.com/lukesteensen",
@@ -3159,7 +3625,7 @@ module.exports = {
       "description": "When we set out to build Vector, we knew that reliability and performance were\ntwo of our top priorities. We also knew that even the best of intentions would\nnot be enough to make certain those qualities were realized and reflected in our\nusers' production deployments. Since then, we've been continuously evolving and\nexpanding our approach to achieving that level of quality.",
       "id": "how-we-test-vector",
       "path": "website/blog/2020-04-09-how-we-test-vector.md",
-      "permalink": "https://vector.dev/blog/how-we-test-vector",
+      "permalink": "https://vector.dev/blog/how-we-test-vector/",
       "tags": [
         "type: post",
         "domain: testing"
@@ -9336,14 +9802,26 @@ module.exports = {
       "deletions_count": 8605,
       "description": "",
       "highlights": [
-
+        {
+          "author_github": "https://github.com/binarylogic",
+          "date": "2019-11-19",
+          "description": "Vector now supports ARM architectures on the Linux platform! These\narchitectures are widely used in embeded devices and recently started to get\ntraction on servers. To get started, you can follow the installation\ninstructions for your preferred method:",
+          "id": "arm-support-on-linux",
+          "path": "website/highlights/2019-11-19-arm-support-on-linux.md",
+          "permalink": "https://vector.dev/highlights/arm-support-on-linux/",
+          "tags": [
+            "type: new feature",
+            "domain: platforms",
+            "platform: arm"
+          ],
+          "title": "ARMv7 & ARM64 Support on Linux"
+        }
       ],
       "insertions_count": 27640,
       "last_version": null,
-      "posts": [
-
-      ],
+      "permalink": "https://vector.dev/releases/0.4.0/",
       "subtitle": "",
+      "title": "Release v0.4.0",
       "type": "initial dev",
       "type_url": "https://semver.org/#spec-item-4",
       "upgrade_guides": [
@@ -10615,18 +11093,30 @@ module.exports = {
         }
       ],
       "compare_url": "https://github.com/timberio/vector/compare/v0.4.0...v0.5.0",
-      "date": "2019-10-09",
+      "date": "2019-10-10",
       "deletions_count": 3038,
       "description": "",
       "highlights": [
-
+        {
+          "author_github": "https://github.com/binarylogic",
+          "date": "2019-11-21",
+          "description": "We're excited to announce that Vector can now be installed on Windows!\nTo get started, check out the Windows installation instructions\nor head over to the releases section and download the\nappropriate Windows archive. Just like on Linux, installation on Windows is\nquick and easy. Let us know what you think!.",
+          "id": "windows-support",
+          "path": "website/highlights/2019-11-21-windows-support.md",
+          "permalink": "https://vector.dev/highlights/windows-support/",
+          "tags": [
+            "type: new feature",
+            "domain: platforms",
+            "platform: windows"
+          ],
+          "title": "Windows Support Is Here!"
+        }
       ],
       "insertions_count": 6839,
       "last_version": "0.4.0",
-      "posts": [
-
-      ],
+      "permalink": "https://vector.dev/releases/0.5.0/",
       "subtitle": "",
+      "title": "Release v0.5.0",
       "type": "initial dev",
       "type_url": "https://semver.org/#spec-item-4",
       "upgrade_guides": [
@@ -15558,58 +16048,84 @@ module.exports = {
         }
       ],
       "compare_url": "https://github.com/timberio/vector/compare/v0.5.0...v0.6.0",
-      "date": "2019-12-09",
+      "date": "2019-12-12",
       "deletions_count": 9213,
       "description": "",
       "highlights": [
-
-      ],
-      "insertions_count": 22141,
-      "last_version": "0.5.0",
-      "posts": [
-        {
-          "author_github": "https://github.com/binarylogic",
-          "date": "2019-11-19",
-          "description": "Vector now supports ARM architectures on the Linux platform! These\narchitectures are widely used in embeded devices and recently started to get\ntraction on servers. To get started, you can follow the installation\ninstructions for your preferred method:",
-          "id": "arm-support-on-linux",
-          "path": "website/blog/2019-11-19-arm-support-on-linux.md",
-          "permalink": "https://vector.dev/blog/arm-support-on-linux",
-          "tags": [
-            "type: announcement",
-            "domain: platforms",
-            "platform: arm"
-          ],
-          "title": "ARMv7 & ARM64 Support on Linux"
-        },
-        {
-          "author_github": "https://github.com/binarylogic",
-          "date": "2019-11-21",
-          "description": "We're excited to announce that Vector can now be installed on Windows!\nTo get started, check out the Windows installation instructions\nor head over to the releases section and download the\nappropriate Windows archive. Just like on Linux, installation on Windows is\nquick and easy. Let us know what you think!.",
-          "id": "windows-support",
-          "path": "website/blog/2019-11-21-windows-support.md",
-          "permalink": "https://vector.dev/blog/windows-support",
-          "tags": [
-            "type: announcement",
-            "domain: platforms",
-            "platform: windows"
-          ],
-          "title": "Windows Support Is Here!"
-        },
         {
           "author_github": "https://github.com/binarylogic",
           "date": "2019-11-25",
           "description": "Today we're excited to announce beta support for unit testing Vector\nconfigurations, allowing you to define tests directly within your Vector\nconfiguration file. These tests are used to assert the output from topologies of\ntransform components given certain input events, ensuring\nthat your configuration behavior does not regress; a very powerful feature for\nmission-critical production pipelines that are collaborated on.",
           "id": "unit-testing-vector-config-files",
-          "path": "website/blog/2019-11-25-unit-testing-vector-config-files.md",
-          "permalink": "https://vector.dev/blog/unit-testing-vector-config-files",
+          "path": "website/highlights/2019-11-25-unit-testing-vector-config-files.md",
+          "permalink": "https://vector.dev/highlights/unit-testing-vector-config-files/",
           "tags": [
-            "type: announcement",
+            "type: new feature",
             "domain: config"
           ],
           "title": "Unit Testing Your Vector Config Files"
+        },
+        {
+          "author_github": "https://github.com/Jeffail",
+          "date": "2019-12-13",
+          "description": "We're modern progressive parents and aren't about to tell Vector who it can and\ncan't hang out with. As such, we're now allowing you to specify custom DNS\nservers in your configs.",
+          "id": "custom-dns",
+          "path": "website/highlights/2019-12-13-custom-dns.md",
+          "permalink": "https://vector.dev/highlights/custom-dns/",
+          "tags": [
+            "type: new feature",
+            "domain: networking"
+          ],
+          "title": "Use Custom DNS Servers"
+        },
+        {
+          "author_github": "https://github.com/Jeffail",
+          "date": "2019-12-14",
+          "description": "We're currently experimenting with Kubernetes integration\nThis functionality is undocumented and not yet ready for general use. However,\nwe consider it to be at Alpha stage and suitable for adventurous early adopters\nto try out.",
+          "id": "kubernetes-source-alpha",
+          "path": "website/highlights/2019-12-14-kubernetes-source-alpha.md",
+          "permalink": "https://vector.dev/highlights/kubernetes-source-alpha/",
+          "tags": [
+            "type: new feature",
+            "domain: source",
+            "source: kubernetes"
+          ],
+          "title": "New Kubernetes Source (alpha)"
+        },
+        {
+          "author_github": "https://github.com/Jeffail",
+          "date": "2019-12-16",
+          "description": "Are your events the laughing-stock of the data warehouse? Then enrich them with\nour brand spanking new `aws_ec2_metadata` transform.",
+          "id": "ec2-metadata",
+          "path": "website/highlights/2019-12-16-ec2-metadata.md",
+          "permalink": "https://vector.dev/highlights/ec2-metadata/",
+          "tags": [
+            "type: new feature",
+            "domain: transforms",
+            "transform: aws_ec2_metadata"
+          ],
+          "title": "New AWS EC2 Medata Transform"
+        },
+        {
+          "author_github": "https://github.com/Jeffail",
+          "date": "2020-01-07",
+          "description": "We love Prometheus, but we also love options\nand so we've added a `prometheus` source to let you\nsend Prometheus format metrics anywhere you like.",
+          "id": "prometheus-source.md",
+          "path": "website/highlights/2020-01-07-prometheus-source.md",
+          "permalink": "https://vector.dev/highlights/prometheus-source.md/",
+          "tags": [
+            "type: new feature",
+            "domain: sources",
+            "source: prometheus"
+          ],
+          "title": "New Prometheus Source"
         }
       ],
+      "insertions_count": 22141,
+      "last_version": "0.5.0",
+      "permalink": "https://vector.dev/releases/0.6.0/",
       "subtitle": "",
+      "title": "Release v0.6.0",
       "type": "initial dev",
       "type_url": "https://semver.org/#spec-item-4",
       "upgrade_guides": [
@@ -18924,64 +19440,9 @@ module.exports = {
       ],
       "insertions_count": 24373,
       "last_version": "0.6.0",
-      "posts": [
-        {
-          "author_github": "https://github.com/Jeffail",
-          "date": "2019-12-13",
-          "description": "We're modern progressive parents and aren't about to tell Vector who it can and\ncan't hang out with. As such, we're now allowing you to specify custom DNS\nservers in your configs.",
-          "id": "custom-dns",
-          "path": "website/blog/2019-12-13-custom-dns.md",
-          "permalink": "https://vector.dev/blog/custom-dns",
-          "tags": [
-            "type: announcement",
-            "domain: networking"
-          ],
-          "title": "Use Custom DNS Servers"
-        },
-        {
-          "author_github": "https://github.com/Jeffail",
-          "date": "2019-12-14",
-          "description": "We're currently experimenting with Kubernetes integration\nThis functionality is undocumented and not yet ready for general use. However,\nwe consider it to be at Alpha stage and suitable for adventurous early adopters\nto try out.",
-          "id": "kubernetes-source-alpha",
-          "path": "website/blog/2019-12-14-kubernetes-source-alpha.md",
-          "permalink": "https://vector.dev/blog/kubernetes-source-alpha",
-          "tags": [
-            "type: announcement",
-            "domain: platforms",
-            "platform: kubernetes"
-          ],
-          "title": "Alpha Kubernetes Source"
-        },
-        {
-          "author_github": "https://github.com/Jeffail",
-          "date": "2019-12-16",
-          "description": "Are your events the laughing-stock of the data warehouse? Then enrich them with\nour brand spanking new `aws_ec2_metadata` transform.",
-          "id": "ec2-metadata",
-          "path": "website/blog/2019-12-16-ec2-metadata.md",
-          "permalink": "https://vector.dev/blog/ec2-metadata",
-          "tags": [
-            "type: announcement",
-            "domain: transforms",
-            "transform: ec2_metadata"
-          ],
-          "title": "EC2 Metadata Enrichments"
-        },
-        {
-          "author_github": "https://github.com/Jeffail",
-          "date": "2020-01-07",
-          "description": "We love Prometheus, but we also love options\nand so we've added a `prometheus` source to let you\nsend Prometheus format metrics anywhere you like.",
-          "id": "prometheus-source",
-          "path": "website/blog/2020-01-07-prometheus-source.md",
-          "permalink": "https://vector.dev/blog/prometheus-source",
-          "tags": [
-            "type: announcement",
-            "domain: sources",
-            "source: prometheus"
-          ],
-          "title": "Prometheus Source"
-        }
-      ],
+      "permalink": "https://vector.dev/releases/0.7.0/",
       "subtitle": "The Great Omelet",
+      "title": "Release v0.7.0",
       "type": "initial dev",
       "type_url": "https://semver.org/#spec-item-4",
       "upgrade_guides": [
@@ -19280,7 +19741,7 @@ module.exports = {
         }
       ],
       "compare_url": "https://github.com/timberio/vector/compare/v0.7.0...v0.7.1",
-      "date": "2020-01-23",
+      "date": "2020-01-24",
       "deletions_count": 206,
       "description": "",
       "highlights": [
@@ -19288,10 +19749,9 @@ module.exports = {
       ],
       "insertions_count": 281,
       "last_version": "0.7.0",
-      "posts": [
-
-      ],
+      "permalink": "https://vector.dev/releases/0.7.1/",
       "subtitle": "",
+      "title": "Release v0.7.1",
       "type": "initial dev",
       "type_url": "https://semver.org/#spec-item-4",
       "upgrade_guides": [
@@ -19551,10 +20011,9 @@ module.exports = {
       ],
       "insertions_count": 104,
       "last_version": "0.7.1",
-      "posts": [
-
-      ],
+      "permalink": "https://vector.dev/releases/0.7.2/",
       "subtitle": "",
+      "title": "Release v0.7.2",
       "type": "initial dev",
       "type_url": "https://semver.org/#spec-item-4",
       "upgrade_guides": [
@@ -23826,47 +24285,184 @@ module.exports = {
         }
       ],
       "compare_url": "https://github.com/timberio/vector/compare/v0.7.2...v0.8.0",
-      "date": "2020-02-20",
+      "date": "2020-02-25",
       "deletions_count": 20387,
       "description": "The features for this release have been pouring in. Clearly the\nVector team need better hobbies.",
       "highlights": [
         {
-          "body": "<p>\nAnyone that was worked with Docker logs knows how frustrating this problem\ncan be. Docker, by default, splits log messages that exceed 16kb. While 16kb\nseems like a lot, it can easily be exceeded if you're logging rich structured\nevents. This can be a very difficult and frustrating problem to solve with\nother tools (we speak from experience). In this release Vector solves this\nautomatically with a new `auto_partial_merge` option in the `docker` source.\n</p>\n<p>\nWe love assimilation and look forward to a future where our individualistic\nhuman personalities can also be merged into a societal hive mind.\n</p>\n",
-          "id": "merge-docker-events",
-          "title": "Automatically Merge Split Docker Events!"
+          "author_github": "https://github.com/a-rodin",
+          "date": "2020-01-30",
+          "description": "",
+          "id": "sematext-logs-sink.md",
+          "path": "website/highlights/2020-01-30-sematext-logs-sink.md",
+          "permalink": "https://vector.dev/highlights/sematext-logs-sink.md/",
+          "tags": [
+            "type: new feature",
+            "domain: sources",
+            "source: vector"
+          ],
+          "title": "The Vector Source Now Accepts Metrics"
         },
         {
-          "body": "<p>\nThe new <a href=\"/docs/reference/transforms/swimlanes/\"><code>swimlanes</code>\ntransform</a> makes it much easier to configure conditional branches of\ntransforms and sinks. For example, you can easily create\n<a href=\"/docs/reference/transforms/swimlanes/#output\">if/else pipelines</a>.\n</p>\n<p>\nRemember to occasionally let your branches mingle so that they don't completely\nlose touch.\n</p>\n",
-          "id": "improved-control-flow",
-          "title": "Improved Control Flow With Swimlanes"
+          "author_github": "https://github.com/a-rodin",
+          "date": "2020-02-05",
+          "description": "",
+          "id": "vic-the-vector-mascot.md",
+          "path": "website/highlights/2020-02-05-vic-the-vector-mascot.md",
+          "permalink": "https://vector.dev/highlights/vic-the-vector-mascot.md/",
+          "tags": [
+            "type: new feature",
+            "domain: sources",
+            "source: vector"
+          ],
+          "title": "The Vector Source Now Accepts Metrics"
         },
         {
-          "body": "<p>\nUnit testing your configuration files has been supported by Vector for a while\nnow. Based on feedback we've received and some healthy dog-fooding we've\nexpanded their functionality and made a lot of improvements to how they work.\n</p>\n<p>\nIf you aren't yet using unit tests in your configs we strongly recommend you try\nit out. You can find out more in <a href=\"/docs/setup/guides/unit-testing/\">this guide</a>.\n</p>\n",
-          "id": "unit-test-improvements",
-          "title": "Config Unit Test Improvements"
+          "author_github": "https://github.com/a-rodin",
+          "date": "2020-02-07",
+          "description": "",
+          "id": "multi-config-files.md",
+          "path": "website/highlights/2020-02-07-multi-config-files.md",
+          "permalink": "https://vector.dev/highlights/multi-config-files.md/",
+          "tags": [
+            "type: new feature",
+            "domain: sources",
+            "source: vector"
+          ],
+          "title": "The Vector Source Now Accepts Metrics"
         },
         {
-          "body": "<p>\nNot everyone enjoys Marmite, we get it, some people have\n<span style=\"text-decoration: line-through;\">wrong</span> different tastes.\nSimilarly, not everyone is going to want to follow our default field schema\n(`host`, `message`, `timestamp`). Rather than making you work around this with\ntransforms we've added some handy global options to set these universally:\n</p>\n<pre>\n# OPTIONAL - Log schema\n[log_schema]\n  host_key = \"host\" # default\n  message_key = \"message\" # default\n  timestamp_key = \"timestamp\" # default\n</pre>\n",
-          "id": "custom-schemas",
-          "title": "Custom Field Schemas"
+          "author_github": "https://github.com/a-rodin",
+          "date": "2020-02-10",
+          "description": "",
+          "id": "humio-logs-sink.md",
+          "path": "website/highlights/2020-02-10-humio-logs-sink.md",
+          "permalink": "https://vector.dev/highlights/humio-logs-sink.md/",
+          "tags": [
+            "type: new feature",
+            "domain: sources",
+            "source: vector"
+          ],
+          "title": "The Vector Source Now Accepts Metrics"
         },
         {
-          "body": "<p>\nVector is now able to execute a topology spread across multiple config files,\nwhich allows you to break large pipelines down into bite size, easier managed,\nchunks. Running them is as simple as:\n</p>\n<pre>\nvector -c ./configs/first.toml -c ./configs/second.toml -c ./more/*.toml\n</pre>\n<p>\nSubscribe to our newsletter and you'll be notified when we learn how to do this\nwith human emotions.\n</p>\n",
-          "id": "multi-config-files",
-          "title": "Support for Multiple Config Files"
+          "author_github": "https://github.com/a-rodin",
+          "date": "2020-02-11",
+          "description": "",
+          "id": "improved-syslog-parsing.md",
+          "path": "website/highlights/2020-02-11-improved-syslog-parsing.md",
+          "permalink": "https://vector.dev/highlights/improved-syslog-parsing.md/",
+          "tags": [
+            "type: new feature",
+            "domain: sources",
+            "source: vector"
+          ],
+          "title": "The Vector Source Now Accepts Metrics"
         },
         {
-          "body": "<p>\nWe all love a good sink. Now you can enjoy our latest offerings:\n<a href=\"/docs/reference/sinks/gcp_stackdriver_logging\"><code>gcp_stackdriver_logging</code></a>,\n<a href=\"/docs/reference/sinks/gcp_cloud_storage\"><code>gcp_cloud_storage</code></a>,\n<a href=\"/docs/reference/sinks/logdna\"><code>logdna</code></a>,\n<a href=\"/docs/reference/sinks/humio_logs\"><code>humio_logs</code></a>,\n<a href=\"/docs/reference/sinks/loki\"><code>loki</code></a> and\n<a href=\"/docs/reference/sinks/influxdb_metrics\"><code>influxdb_metrics</code></a>.\n</p>\n",
-          "id": "lots-of-new-sinks",
-          "title": "Lots of New Sinks"
+          "author_github": "https://github.com/a-rodin",
+          "date": "2020-02-14",
+          "description": "",
+          "id": "global-log-schema.md",
+          "path": "website/highlights/2020-02-14-global-log-schema.md",
+          "permalink": "https://vector.dev/highlights/global-log-schema.md/",
+          "tags": [
+            "type: new feature",
+            "domain: sources",
+            "source: vector"
+          ],
+          "title": "The Vector Source Now Accepts Metrics"
+        },
+        {
+          "author_github": "https://github.com/a-rodin",
+          "date": "2020-02-17",
+          "description": "",
+          "id": "loki-sink.md",
+          "path": "website/highlights/2020-02-17-loki-sink.md",
+          "permalink": "https://vector.dev/highlights/loki-sink.md/",
+          "tags": [
+            "type: new feature",
+            "domain: sources",
+            "source: vector"
+          ],
+          "title": "The Vector Source Now Accepts Metrics"
+        },
+        {
+          "author_github": "https://github.com/a-rodin",
+          "date": "2020-02-18",
+          "description": "",
+          "id": "influxdb-metrics-sink.md",
+          "path": "website/highlights/2020-02-18-influxdb-metrics-sink.md",
+          "permalink": "https://vector.dev/highlights/influxdb-metrics-sink.md/",
+          "tags": [
+            "type: new feature",
+            "domain: sources",
+            "source: vector"
+          ],
+          "title": "The Vector Source Now Accepts Metrics"
+        },
+        {
+          "author_github": "https://github.com/a-rodin",
+          "date": "2020-02-20",
+          "description": "",
+          "id": "gcp-cloud-storage-sink.md",
+          "path": "website/highlights/2020-02-20-gcp-cloud-storage-sink.md",
+          "permalink": "https://vector.dev/highlights/gcp-cloud-storage-sink.md/",
+          "tags": [
+            "type: new feature",
+            "domain: sources",
+            "source: vector"
+          ],
+          "title": "The Vector Source Now Accepts Metrics"
+        },
+        {
+          "author_github": "https://github.com/a-rodin",
+          "date": "2020-02-21",
+          "description": "- contains\n- prefix\n- regex\n- ends_with\n- is_log\n- is_metric\n- etc\n",
+          "id": "file-source-multiline-support.md",
+          "path": "website/highlights/2020-02-21-file-source-multiline-support.md",
+          "permalink": "https://vector.dev/highlights/file-source-multiline-support.md/",
+          "tags": [
+            "type: new feature",
+            "domain: sources",
+            "source: vector"
+          ],
+          "title": "The Vector Source Now Accepts Metrics"
+        },
+        {
+          "author_github": "https://github.com/a-rodin",
+          "date": "2020-02-24",
+          "description": "",
+          "id": "rename-fields-transform.md",
+          "path": "website/highlights/2020-02-24-rename-fields-transform.md",
+          "permalink": "https://vector.dev/highlights/rename-fields-transform.md/",
+          "tags": [
+            "type: new feature",
+            "domain: sources",
+            "source: vector"
+          ],
+          "title": "The Vector Source Now Accepts Metrics"
+        },
+        {
+          "author_github": "https://github.com/a-rodin",
+          "date": "2020-02-24",
+          "description": "",
+          "id": "swimlanes-transform.md",
+          "path": "website/highlights/2020-02-24-swimlanes-transform.md",
+          "permalink": "https://vector.dev/highlights/swimlanes-transform.md/",
+          "tags": [
+            "type: new feature",
+            "domain: sources",
+            "source: vector"
+          ],
+          "title": "The Vector Source Now Accepts Metrics"
         }
       ],
       "insertions_count": 53951,
       "last_version": "0.7.2",
-      "posts": [
-
-      ],
+      "permalink": "https://vector.dev/releases/0.8.0/",
       "subtitle": "A wholesome platter of features",
+      "title": "Release v0.8.0",
       "type": "initial dev",
       "type_url": "https://semver.org/#spec-item-4",
       "upgrade_guides": [
@@ -23902,14 +24498,26 @@ module.exports = {
       "deletions_count": 1,
       "description": "",
       "highlights": [
-
+        {
+          "author_github": "https://github.com/a-rodin",
+          "date": "2020-03-03",
+          "description": "- contains\n- prefix\n- regex\n- ends_with\n- etc\n",
+          "id": "privacy-policy.md",
+          "path": "website/highlights/2020-03-03-privacy-policy.md",
+          "permalink": "https://vector.dev/highlights/privacy-policy.md/",
+          "tags": [
+            "type: new feature",
+            "domain: sources",
+            "source: vector"
+          ],
+          "title": "The Vector Source Now Accepts Metrics"
+        }
       ],
       "insertions_count": 1,
       "last_version": "0.8.0",
-      "posts": [
-
-      ],
+      "permalink": "https://vector.dev/releases/0.8.1/",
       "subtitle": "",
+      "title": "Release v0.8.1",
       "type": "initial dev",
       "type_url": "https://semver.org/#spec-item-4",
       "upgrade_guides": [
@@ -24009,10 +24617,9 @@ module.exports = {
       ],
       "insertions_count": 31,
       "last_version": "0.8.1",
-      "posts": [
-
-      ],
+      "permalink": "https://vector.dev/releases/0.8.2/",
       "subtitle": "",
+      "title": "Release v0.8.2",
       "type": "initial dev",
       "type_url": "https://semver.org/#spec-item-4",
       "upgrade_guides": [

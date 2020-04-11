@@ -6,7 +6,6 @@ import fs from 'fs-extra';
 import globby from 'globby';
 import path from 'path';
 import {parse, normalizeUrl, aliasedSitePath} from '@docusaurus/utils';
-import readingTime from 'reading-time';
 
 export function truncate(fileString: string, truncateMarker: RegExp) {
   return fileString.split(truncateMarker, 1).shift()!;
@@ -35,34 +34,28 @@ export async function generateReleases(
       const source = path.join(releaseDir, relativeSource);
       const aliasedSource = aliasedSitePath(source, siteDir);
       const fileString = await fs.readFile(source, 'utf-8');
-      const readingStats = readingTime(fileString);
       const {frontMatter, content, excerpt} = parse(fileString);
 
       if (frontMatter.draft && process.env.NODE_ENV === 'production') {
         return;
       }
 
-      let linkName = relativeSource.replace(/\.mdx?$/, '');
-      let seriesPosition = frontMatter.series_position;
-      let title = frontMatter.title || linkName;
-      let coverLabel = frontMatter.cover_label || title;
+      let version = relativeSource.replace(/\.mdx?$/, '');
+      let title = frontMatter.title || version;
 
       releases.push({
         id: frontMatter.id || frontMatter.title,
         metadata: {
-          coverLabel: coverLabel,
           description: frontMatter.description || excerpt,
           permalink: normalizeUrl([
             baseUrl,
             routeBasePath,
-            frontMatter.id || linkName,
+            frontMatter.id || version,
           ]),
-          readingTime: readingStats.text,
-          seriesPosition: seriesPosition,
-          sort: frontMatter.sort,
           source: aliasedSource,
           title: title,
           truncated: truncateMarker?.test(content) || false,
+          version: version,
         },
       });
     }),

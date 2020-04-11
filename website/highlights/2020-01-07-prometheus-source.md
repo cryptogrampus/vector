@@ -1,9 +1,11 @@
 ---
 last_modified_on: "2020-03-31"
-title: "Prometheus Source"
+title: "New Prometheus Source"
 description: "Scrape prometheus metrics with Vector"
 author_github: https://github.com/Jeffail
-tags: ["domain: sources", "source: prometheus"]
+pr_numbers: [1264]
+release: "0.6.0"
+tags: ["type: new feature", "domain: sources", "source: prometheus"]
 ---
 
 We love [Prometheus][urls.prometheus], but we also love [options](https://www.mms.com/en-us/shop/single-color)

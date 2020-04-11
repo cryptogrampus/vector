@@ -5,6 +5,21 @@ export interface Highlight {
 
 export interface HighlightContent {
   highlights: Highlight[];
+  highlightTags: HighlightTags;
+}
+
+export interface HighlightItemsToMetadata {
+  [key: string]: MetaData;
+}
+
+export interface HighlightTag {
+  name: string;
+  items: string[];
+  permalink: string;
+}
+
+export interface HighlightTags {
+  [key: string]: HighlightTag;
 }
 
 export interface MetaData {
@@ -31,6 +46,8 @@ export interface PluginOptions {
   include: string[];
   highlightComponent: string;
   highlightListComponent: string;
+  highlightTagListComponent: string;
+  highlightTagComponent: string;
   remarkPlugins: string[];
   rehypePlugins: string[];
   truncateMarker: RegExp;
@@ -38,5 +55,17 @@ export interface PluginOptions {
 
 export interface Tag {
   label: string;
+  permalink: string;
+}
+
+export interface TagsModule {
+  [key: string]: TagModule;
+}
+
+export interface TagModule {
+  allTagsPath: string;
+  slug: string;
+  name: string;
+  count: number;
   permalink: string;
 }

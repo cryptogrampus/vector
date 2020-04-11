@@ -39,7 +39,7 @@ async function generateHighlights(highlightDir, { siteConfig, siteDir }, options
         let date = fileNameMatch ? new Date(fileNameMatch[1]) : new Date(Date.now());
         let description = frontMatter.description || excerpt;
         let id = frontMatter.id || frontMatter.title;
-        let linkName = fileNameMatch ? fileNameMatch[2] : frontMatter.id;
+        let linkName = relativeSource.replace(/\.mdx?$/, '');
         let tags = frontMatter.tags || [];
         let title = frontMatter.title || linkName;
         highlights.push({

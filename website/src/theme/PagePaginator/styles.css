@@ -1,5 +1,5 @@
 .pagination-nav .pagination-nav__link {
-  background: var(--ifm-panel-background);
+  background-color: var(--ifm-panel-background-color);
   border-color: var(--ifm-panel-border-color);
   box-shadow: var(--ifm-panel-box-shadow);
   transition: border 250ms ease;

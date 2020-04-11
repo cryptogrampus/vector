@@ -10,27 +10,17 @@ class Release
     :date,
     :last_date,
     :last_version,
-    :posts,
+    :permalink,
     :highlights,
     :upgrade_guides,
     :version
 
-  def initialize(release_hash, last_version, last_date, all_posts)
+  def initialize(release_hash, last_version, last_date, all_highlights)
     @last_date = last_date
     @last_version = last_version
     @date = release_hash.fetch("date").to_date
     @subtitle = release_hash["subtitle"] || ""
     @description = release_hash["description"] || ""
-
-    @posts =
-      all_posts.select do |p|
-        last_date && p.date > last_date && p.date <= @date && p.type?("announcement")
-      end
-
-    @highlights =
-      (release_hash["highlights"] || []).collect do |highlight_hash|
-        OpenStruct.new(highlight_hash)
-      end
 
     @upgrade_guides =
       (release_hash["upgrade_guides"] || []).collect do |guide_hash|
@@ -39,10 +29,19 @@ class Release
 
     @version = Version.new(release_hash.fetch("version"))
 
+    # Post process
+
     @commits =
       release_hash.fetch("commits").collect do |commit_hash|
         Commit.new(commit_hash)
       end
+
+    @highlights =
+      all_highlights.select do |h|
+        h.release == version.to_s
+      end
+
+    @permalink = "#{RELEASES_HOST}/#{@version}/"
   end
 
   def <=>(other)
@@ -129,6 +128,10 @@ class Release
     type == "pre"
   end
 
+  def title
+    @title ||= "Release v#{version}"
+  end
+
   def to_h
     {
       commits: commits.deep_to_h,
@@ -139,8 +142,9 @@ class Release
       date: date,
       insertions_count: insertions_count,
       last_version: last_version,
-      posts: posts.deep_to_h,
+      permalink: permalink,
       highlights: highlights.deep_to_h,
+      title: title,
       type: type,
       type_url: type_url,
       upgrade_guides: upgrade_guides.deep_to_h,

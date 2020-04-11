@@ -117,23 +117,21 @@ function DownloadTable({browsePath, date, downloads, releaseNotesPath, version})
 function ReleaseDownload({version}) {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
-  const {metadata: {installation: installation, latest_release: latestRelease, releases}} = siteConfig.customFields;
+  const {metadata: {installation: installation, latest_release: latestRelease, releases: releasesObj}} = siteConfig.customFields;
   const {downloads} = installation;
 
   const latestDownloads = Object.values(downloads).filter(download => download.available_on_latest);
   const nightlyDownloads = Object.values(downloads).filter(download => download.available_on_nightly);
   const nightlyDate = new Date().toISOString().substr(0,10);
 
-  const oldReleases = Object.values(releases).slice(0);
-  oldReleases.pop();
-  oldReleases.reverse();
-  const olderOptions = oldReleases.map(release => ({value: release.version, label: `v${release.version} - ${release.date}`}));
+  const releases = Object.values(releasesObj).slice(0);
+  releases.reverse();
+  const releaseOptions = releases.map(release => ({value: release.version, label: `v${release.version} - ${release.date}`}));
 
   viewedNewRelease();
 
   const [selectedVersion, setVersion] = useState(version || latestRelease.version);
-  const selectedTab = selectedVersion == latestRelease.version ? 'latest' : 'older';
-  const oldRelease = selectedVersion == latestRelease.version ? oldReleases[0] : oldReleases.find(release => release.version == selectedVersion);
+  const release = releases.find(release => release.version == selectedVersion);
 
   return (
     <Layout title="Download" description="Download Vector for your platform.">
@@ -177,29 +175,25 @@ function ReleaseDownload({version}) {
             <Tabs
               block={true}
               className="rounded"
-              defaultValue={selectedTab}
+              defaultValue="stable"
               values={[
-                { label: 'Older', value: 'older', },
-                { label: `Latest (${latestRelease.version})`, value: 'latest', },
+                { label: `Stable`, value: 'stable', },
                 { label: 'Nightly', value: 'nightly', },
               ]
             }>
-            <TabItem value="older">
-              <Alert fill={true} type="warning">
-                Olders versions are outdated and it is highly recommended to use the latest version. Please proceed with caution.
-              </Alert>
+            <TabItem value="stable">
               <Select
                 className={classnames('react-select-container', styles.releaseSelect)}
                 classNamePrefix="react-select"
-                options={olderOptions}
+                options={releaseOptions}
                 isClearable={false}
                 placeholder="Select a version..."
-                value={olderOptions.find(option => option.value == oldRelease.version)}
+                value={releaseOptions.find(option => option.value == release.version)}
                 onChange={(selectedOption) => setVersion(selectedOption ? selectedOption.value : null)} />
-              <DownloadTable browsePath={oldRelease.version} date={oldRelease.date} downloads={latestDownloads} releaseNotesPath={`/releases/${oldRelease.version}/`} version={oldRelease.version} />
-            </TabItem>
-            <TabItem value="latest">
-              <DownloadTable browsePath={latestRelease.version} date={latestRelease.date} downloads={latestDownloads} releaseNotesPath={`/releases/${latestRelease.version}/`} version={latestRelease.version} />
+              {release.version != releases[0].version && <Alert fill={true} type="warning">
+                Olders versions are outdated and it is highly recommended to use the latest version. Please proceed with caution.
+              </Alert>}
+              <DownloadTable browsePath={release.version} date={release.date} downloads={latestDownloads} releaseNotesPath={`/releases/${release.version}/`} version={release.version} />
             </TabItem>
             <TabItem value="nightly">
               <Alert fill={true} type="warning">

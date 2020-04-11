@@ -1,5 +1,5 @@
 [releases."0.6.0"]
-date = 2019-12-09
+date = 2019-12-12
 commits = [
 {sha = "15b44d04a06c91d5e0d1017b251c32ac165f2bd6", message = "chore(operations): Push docker images so that `latest` tags are last", author = "Ben Johnson", date = 2019-10-10T15:01:52Z, files_count = 1, insertions_count = 1, deletions_count = 1},
 {sha = "4bc7696077e691f59811e8b1e078f1b029fe63a6", message = "chore(operations): Print grease command output", author = "Ben Johnson", date = 2019-10-10T15:19:21Z, files_count = 1, insertions_count = 1, deletions_count = 1},
