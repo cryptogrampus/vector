@@ -1137,11 +1137,21 @@ header h1 {
   margin-right: 0;
 }
 
+/* hero--clean */
+
 .hero.hero--clean {
   border-bottom: 0px none;
   min-height: none;
   margin-bottom: 0;
 }
+
+/* hero--flush */
+
+.hero.hero--flush {
+  padding-top: 0;
+}
+
+/* hero--full-height */
 
 .hero.hero--full-height {
   display: flex;
@@ -1153,6 +1163,8 @@ header h1 {
 .hero.hero--full-height > .container > *:last-child {
   margin-bottom: 0;
 }
+
+/* hero--animated-graph */
 
 .hero.hero--animated-graph {
   padding: 0;

@@ -484,6 +484,10 @@ class Templates
     count != 1 ? "#{count} #{word.pluralize}" : "#{count} #{word}"
   end
 
+  def release_header(release)
+    render("#{partials_path}/_release_header.md", binding).strip
+  end
+
   def release_summary(release)
     parts = []
 

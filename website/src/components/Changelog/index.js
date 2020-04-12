@@ -7,6 +7,7 @@ import Link from '@docusaurus/Link';
 import _ from 'lodash';
 import {commitTypeName, sortCommitTypes} from '@site/src/exports/commits';
 import pluralize from 'pluralize';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 const AnchoredH3 = Heading('h3');
 const AnchoredH4 = Heading('h4');
@@ -60,7 +61,10 @@ function Commits({commits, groupBy, setSearchTerm}) {
 }
 
 function Changelog(props) {
-  const {commits} = props;
+  const context = useDocusaurusContext();
+  const {siteConfig = {}} = context;
+  const {metadata: {releases}} = siteConfig.customFields;
+  const commits = _.flatMap(releases, 'commits');
 
   const [groupBy, setGroupBy] = useState('type');
   const [onlyTypes, setOnlyTypes] = useState(new Set(['enhancement', 'feat', 'fix', 'perf']));
@@ -108,7 +112,7 @@ function Changelog(props) {
               type="text"
               onChange={(event) => setSearchTerm(event.currentTarget.value)}
               placeholder="🔍 Search..."
-              className="input--text"
+              className="input--text input--lg"
               value={searchTerm || ''} />
           </div>
           <div className="filter">

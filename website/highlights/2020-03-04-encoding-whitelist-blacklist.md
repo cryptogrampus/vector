@@ -1,14 +1,18 @@
 ---
 last_modified_on: "2020-03-31"
-title: "The Vector Source Now Accepts Metrics"
-description: "Until now, the Vector source only accepted logs, now it accepts metrics as well"
-author_github: https://github.com/a-rodin
+$schema: "/.meta/.schemas/highlights.json"
+title: "Whitelist & Blacklist Fields When Encoding"
+author_github: https://github.com/hoverbear
 pr_numbers: [1915]
 release: "nightly"
-tags: ["type: new feature", "domain: sources", "source: vector"]
+tags: ["type: new feature", "domain: sinks"]
 ---
 
-- new api
-- metrics events
-- timers
-- guides
+We've added the ability to whitelist and blacklist fields during the encoding
+process within [sinks][docs.sinks]. This is useful if you have metadata fields
+that you do not want to send downstream. For example, you might have an
+`application_id` fields that you use for partitioning, but you don't want to
+include it inthe actual data since it would be duplicative.
+
+To use this feature see the new `encoding` options for each sink. For example,
+the [`clickhouse` sink's `encoding` option][docs.sinks.clickhouse#encoding].

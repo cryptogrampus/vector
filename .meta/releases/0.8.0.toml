@@ -1,8 +1,10 @@
 [releases."0.8.0"]
-subtitle = "A wholesome platter of features"
-description = """The features for this release have been pouring in. Clearly the
-Vector team need better hobbies."""
 date = 2020-02-25
+subtitle = "A wholesome platter of features"
+description = """\
+The features for this release have been pouring in. Clearly the Vector team \
+need better hobbies.\
+"""
 commits = [
 {sha = "c5ad7d22f8f3b02c5fd8bc784c7c5cf54dd7b694", message = "chore(website): Make sorting of blog posts stable (#1566)", author = "Alexander Rodin", date = 2020-01-22T17:53:08Z, files_count = 1, insertions_count = 1, deletions_count = 1},
 {sha = "3469bfcfeb39997c977c300399b8f2562f4c7730", message = "chore(operations): Add AWS API key for Windows tests in CI (#1565)", author = "Alexander Rodin", date = 2020-01-22T18:00:10Z, files_count = 1, insertions_count = 5, deletions_count = 1},

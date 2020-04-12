@@ -2590,9 +2590,9 @@ module.exports = {
       "title": "New Prometheus Source"
     },
     {
-      "author_github": "https://github.com/a-rodin",
+      "author_github": "https://github.com/LucioFranco",
       "date": "2020-01-30",
-      "description": "",
+      "description": "Sematext is an all inclusive monitoring solution, allowing to\nto send logs, metrics, and more to their service. You can now sink your log\ndata via the new `sematext_logs` sink. A\n`sematext_metrics` sink is in the works!\n",
       "id": "sematext-logs-sink.md",
       "path": "website/highlights/2020-01-30-sematext-logs-sink.md",
       "permalink": "https://vector.dev/highlights/sematext-logs-sink.md/",
@@ -2601,12 +2601,12 @@ module.exports = {
         "domain: sources",
         "source: vector"
       ],
-      "title": "The Vector Source Now Accepts Metrics"
+      "title": "New Sematext Logs Sink"
     },
     {
       "author_github": "https://github.com/a-rodin",
       "date": "2020-02-05",
-      "description": "",
+      "description": "LogDNA is know for it's simple, cost-effective log storage,\nand now you can take advantage of it through Vector's new\n`logdna` sink.\n",
       "id": "logdna-sink.md",
       "path": "website/highlights/2020-02-05-logdna-sink.md",
       "permalink": "https://vector.dev/highlights/logdna-sink.md/",
@@ -2618,191 +2618,188 @@ module.exports = {
       "title": "The Vector Source Now Accepts Metrics"
     },
     {
-      "author_github": "https://github.com/a-rodin",
+      "author_github": "https://github.com/Jeffail",
       "date": "2020-02-05",
-      "description": "",
+      "description": "Among the many important things that we must accomplish on our road to 1.0,\ndeveloping a mascot was at the top of the list. Meet Vic, the\nVector mascot. He has an illustrious backstory that you should\ncheck out.",
       "id": "vic-the-vector-mascot.md",
       "path": "website/highlights/2020-02-05-vic-the-vector-mascot.md",
       "permalink": "https://vector.dev/highlights/vic-the-vector-mascot.md/",
       "tags": [
         "type: new feature",
-        "domain: sources",
-        "source: vector"
+        "domain: website"
       ],
-      "title": "The Vector Source Now Accepts Metrics"
+      "title": "Meet Vic, The Vector Mascot"
     },
     {
-      "author_github": "https://github.com/a-rodin",
+      "author_github": "https://github.com/Jeffail",
       "date": "2020-02-07",
-      "description": "",
+      "description": "Vector is now able to execute a topology spread across multiple config files,\nwhich allows you to break large pipelines down into bite size, easier managed,\nchunks. Running them is as simple as:",
       "id": "multi-config-files.md",
       "path": "website/highlights/2020-02-07-multi-config-files.md",
       "permalink": "https://vector.dev/highlights/multi-config-files.md/",
       "tags": [
         "type: new feature",
-        "domain: sources",
-        "source: vector"
+        "domain: config"
       ],
-      "title": "The Vector Source Now Accepts Metrics"
+      "title": "Support For Multiple Config Files"
     },
     {
-      "author_github": "https://github.com/a-rodin",
+      "author_github": "https://github.com/binarylogic",
       "date": "2020-02-10",
-      "description": "",
+      "description": "Humio is a powerful log storage system to offers fast ingestion\nand schema on read capabilities. You can now take advantage of Humio via the\n`humio_logs` sink.\n",
       "id": "humio-logs-sink.md",
       "path": "website/highlights/2020-02-10-humio-logs-sink.md",
       "permalink": "https://vector.dev/highlights/humio-logs-sink.md/",
       "tags": [
         "type: new feature",
-        "domain: sources",
-        "source: vector"
+        "domain: sinks",
+        "sink: humio"
       ],
       "title": "The Vector Source Now Accepts Metrics"
     },
     {
-      "author_github": "https://github.com/a-rodin",
+      "author_github": "https://github.com/binarylogic",
       "date": "2020-02-11",
-      "description": "",
+      "description": "Anyone that dealth with Syslog knows that the format specification is a \"goal\".\nIt's very common for formats to deviate slightly. To account for this we've\nupdated our Syslog parsing to follow the RFC 3164,\nRFC 5424, and other common formats. With these changes\nVector is very likely to parse a Syslog format, or anything like it. And, as\nalways, if Vector's `syslog` source fails to parse your\nformat you can always use the `socket` source and the\n`regex_parser` transform to roll your own\ncollection parsing pipeline.\n",
       "id": "improved-syslog-parsing.md",
       "path": "website/highlights/2020-02-11-improved-syslog-parsing.md",
       "permalink": "https://vector.dev/highlights/improved-syslog-parsing.md/",
       "tags": [
         "type: new feature",
         "domain: sources",
-        "source: vector"
+        "source: syslog"
       ],
-      "title": "The Vector Source Now Accepts Metrics"
+      "title": "Improved Syslog Parsing"
     },
     {
-      "author_github": "https://github.com/a-rodin",
+      "author_github": "https://github.com/hoverbear",
       "date": "2020-02-14",
-      "description": "",
+      "description": "Vector does not require a rigid schema for it's `log`\nevents. You are welcome to use any field names you like,\nsuch as the `timestamp`, `message`, and `host`. Until recently, the\ndefault names of these fields were not easily customizable. You either had to\nset these names within the source itself, or rename these fields\nusing the `rename_fields` transform. While this\nworks, it's combersome and is not obvious to anyone reading your Vector\nconfiguration file. Enter Vector's new global log\nschema. These new options allow you to change\nthe default names for the `message_key`, and more:",
       "id": "global-log-schema.md",
       "path": "website/highlights/2020-02-14-global-log-schema.md",
       "permalink": "https://vector.dev/highlights/global-log-schema.md/",
       "tags": [
         "type: new feature",
-        "domain: sources",
-        "source: vector"
+        "domain: config"
       ],
-      "title": "The Vector Source Now Accepts Metrics"
+      "title": "Introducing Vector's Global Log Schema"
     },
     {
       "author_github": "https://github.com/a-rodin",
       "date": "2020-02-17",
-      "description": "",
+      "description": "Vector offers a templating syntax that you can use to build\ndynamic values in your Vector configuration files. This\nhas now been added to the `add_fields` transform,\nenabling the ability to create fields from other fields values.\n",
       "id": "add-fields-transform-templating.md",
       "path": "website/highlights/2020-02-17-add-fields-transform-templating.md",
       "permalink": "https://vector.dev/highlights/add-fields-transform-templating.md/",
       "tags": [
         "type: new feature",
-        "domain: sources",
-        "source: vector"
+        "domain: transforms",
+        "source: add_fields"
       ],
-      "title": "The Vector Source Now Accepts Metrics"
+      "title": "The Add Fields Transform Supports Templating"
     },
     {
-      "author_github": "https://github.com/a-rodin",
+      "author_github": "https://github.com/binarylogic",
       "date": "2020-02-17",
-      "description": "",
+      "description": "Loki has been one of our most requested sinks and Vector now has\nsupport for it via the `loki` sink. Vector is an amazing\nfit for this sink because Vector allows you to derive metrics from\nlogs, making it easy to align labels and\ncorrelate logs and metrics.",
       "id": "loki-sink.md",
       "path": "website/highlights/2020-02-17-loki-sink.md",
       "permalink": "https://vector.dev/highlights/loki-sink.md/",
       "tags": [
         "type: new feature",
-        "domain: sources",
-        "source: vector"
+        "domain: sinks",
+        "sink: loki"
       ],
-      "title": "The Vector Source Now Accepts Metrics"
+      "title": "New Loki Sink"
     },
     {
-      "author_github": "https://github.com/a-rodin",
+      "author_github": "https://github.com/binarylogic",
       "date": "2020-02-18",
-      "description": "",
+      "description": "Influxdb is a popular time-series and metrics storage that\nVector now supports via the `influxdb_metrics` sink.\n",
       "id": "influxdb-metrics-sink.md",
       "path": "website/highlights/2020-02-18-influxdb-metrics-sink.md",
       "permalink": "https://vector.dev/highlights/influxdb-metrics-sink.md/",
       "tags": [
         "type: new feature",
-        "domain: sources",
-        "source: vector"
+        "domain: sinks",
+        "sink: influxdb_metrics"
       ],
-      "title": "The Vector Source Now Accepts Metrics"
+      "title": "New Influxdb Metrics Sink"
     },
     {
       "author_github": "https://github.com/a-rodin",
       "date": "2020-02-20",
-      "description": "",
+      "description": "The GCP Cloud Storage service is reliable, durable,\ncheap storage for users on Google's Cloud. It's similar to Amazon's S3\nservice. Vector now supports this via the `gcp_cloud_storage`\nsink.",
       "id": "gcp-cloud-storage-sink.md",
       "path": "website/highlights/2020-02-20-gcp-cloud-storage-sink.md",
       "permalink": "https://vector.dev/highlights/gcp-cloud-storage-sink.md/",
       "tags": [
         "type: new feature",
-        "domain: sources",
-        "source: vector"
+        "domain: sinks",
+        "sink: gcp_cloud_storage"
       ],
-      "title": "The Vector Source Now Accepts Metrics"
+      "title": "New GCP Cloud Storage Sink"
     },
     {
-      "author_github": "https://github.com/a-rodin",
+      "author_github": "https://github.com/MOZGIII",
       "date": "2020-02-21",
-      "description": "- contains\n- prefix\n- regex\n- ends_with\n- is_log\n- is_metric\n- etc\n",
+      "description": "One of the biggest frustrations we've heard from users in this space is the\ninability to merge lines together. Such a simple task can be incredibly\ncomplex and hard. Fear not! We plan to add first-class support for solving\nthis problem.",
       "id": "file-source-multiline-support.md",
       "path": "website/highlights/2020-02-21-file-source-multiline-support.md",
       "permalink": "https://vector.dev/highlights/file-source-multiline-support.md/",
       "tags": [
-        "type: new feature",
+        "type: enhancement",
         "domain: sources",
-        "source: vector"
+        "source: file"
       ],
-      "title": "The Vector Source Now Accepts Metrics"
+      "title": "Improved Multiline Support In The File Soruce"
     },
     {
-      "author_github": "https://github.com/a-rodin",
+      "author_github": "https://github.com/hoverbear",
       "date": "2020-02-24",
-      "description": "",
+      "description": "Vector has a long overdue `rename_fields` transform.\nThis does exactly what it says, rename fields :).\n",
       "id": "rename-fields-transform.md",
       "path": "website/highlights/2020-02-24-rename-fields-transform.md",
       "permalink": "https://vector.dev/highlights/rename-fields-transform.md/",
       "tags": [
         "type: new feature",
-        "domain: sources",
-        "source: vector"
+        "domain: transforms",
+        "transforms: rename_fields"
       ],
-      "title": "The Vector Source Now Accepts Metrics"
+      "title": "New Rename Fields Transform"
     },
     {
-      "author_github": "https://github.com/a-rodin",
+      "author_github": "https://github.com/Jeffail",
       "date": "2020-02-24",
-      "description": "",
+      "description": "The new `swimlanes` transform makes it much easier\nto configure conditional branches of transforms and sinks. For example, you can\neasily create if/else pipelines.",
       "id": "swimlanes-transform.md",
       "path": "website/highlights/2020-02-24-swimlanes-transform.md",
       "permalink": "https://vector.dev/highlights/swimlanes-transform.md/",
       "tags": [
         "type: new feature",
-        "domain: sources",
-        "source: vector"
+        "domain: transforms",
+        "transform: swimlanes"
       ],
-      "title": "The Vector Source Now Accepts Metrics"
+      "title": "New Swimlanes Transform"
     },
     {
       "author_github": "https://github.com/a-rodin",
       "date": "2020-02-27",
-      "description": "",
+      "description": "Vector is lovingly maintained by the NixOS ecosystem,\nand we've now officially adopted it as a supported platform. This means we'll\nproduce installation docs for the NixOS and\nhelp ensure it stays up to date. We 💖 Nixos.\n",
       "id": "nixos-support.md",
       "path": "website/highlights/2020-02-27-nixos-support.md",
       "permalink": "https://vector.dev/highlights/nixos-support.md/",
       "tags": [
         "type: new feature",
-        "domain: sources",
-        "source: vector"
+        "domain: platforms",
+        "platforms: nixos"
       ],
-      "title": "The Vector Source Now Accepts Metrics"
+      "title": "NixOS Support"
     },
     {
       "author_github": "https://github.com/a-rodin",
       "date": "2020-02-28",
-      "description": "",
+      "description": "We've implemented a feature flag system that lets you build custom versions\nof Vector with selected components. This is handy if:",
       "id": "custom-vector-builds.md",
       "path": "website/highlights/2020-02-28-custom-vector-builds.md",
       "permalink": "https://vector.dev/highlights/custom-vector-builds.md/",
@@ -2811,54 +2808,51 @@ module.exports = {
         "domain: sources",
         "source: vector"
       ],
-      "title": "The Vector Source Now Accepts Metrics"
+      "title": "A La Carte Custom Vector Builds"
     },
     {
       "author_github": "https://github.com/a-rodin",
       "date": "2020-03-03",
-      "description": "- contains\n- prefix\n- regex\n- ends_with\n- etc\n",
+      "description": "In addition to our security policy, we've added\na new privacy policy. It's our pledge that Vector\nwill _never_ implement any tactics, grey-area or not, to unknowingly collect\ndata.\n",
       "id": "privacy-policy.md",
       "path": "website/highlights/2020-03-03-privacy-policy.md",
       "permalink": "https://vector.dev/highlights/privacy-policy.md/",
       "tags": [
-        "type: new feature",
-        "domain: sources",
-        "source: vector"
+        "type: announcement"
       ],
-      "title": "The Vector Source Now Accepts Metrics"
+      "title": "We've Added A Privacy Policy"
     },
     {
-      "author_github": "https://github.com/a-rodin",
+      "author_github": "https://github.com/hoverbear",
       "date": "2020-03-04",
-      "description": "- new api\n- metrics events\n- timers\n- guides\n",
+      "description": "We've added the ability to whitelist and blacklist fields during the encoding\nprocess within sinks. This is useful if you have metadata fields\nthat you do not want to send downstream. For example, you might have an\n`application_id` fields that you use for partitioning, but you don't want to\ninclude it inthe actual data since it would be duplicative.",
       "id": "encoding-whitelist-blacklist.md",
       "path": "website/highlights/2020-03-04-encoding-whitelist-blacklist.md",
       "permalink": "https://vector.dev/highlights/encoding-whitelist-blacklist.md/",
       "tags": [
         "type: new feature",
-        "domain: sources",
-        "source: vector"
+        "domain: sinks"
       ],
-      "title": "The Vector Source Now Accepts Metrics"
+      "title": "Whitelist & Blacklist Fields When Encoding"
     },
     {
       "author_github": "https://github.com/a-rodin",
       "date": "2020-03-09",
-      "description": "",
+      "description": "Compression for Vector's `kafka` sink is now available.\nBefore we take credit for this feature, Vector uses\n`librdkafka` under the hood, and to maintain consistency\nwe just mapped the appropriate options. In addition, we added a\nnew `librdkafka_options` that enables\ntransparent pass-through of `librdkafka`'s options.\n",
       "id": "kafka-sink-compression.md",
       "path": "website/highlights/2020-03-09-kafka-sink-compression.md",
       "permalink": "https://vector.dev/highlights/kafka-sink-compression.md/",
       "tags": [
         "type: new feature",
-        "domain: sources",
-        "source: vector"
+        "domain: sinks",
+        "sink: kafka"
       ],
-      "title": "The Vector Source Now Accepts Metrics"
+      "title": "Compression Now Available In The Kafka Sink"
     },
     {
       "author_github": "https://github.com/a-rodin",
       "date": "2020-03-10",
-      "description": "",
+      "description": "For certain use cases log deduplication can be a useful tool. Not only does\nthis promote your data integrity, but it can help protect against upstream\nmistakes that accidentally doplicate logs. This mistake can easily double\n(or more!) your log volume. To protect against this you can use our new\n`dedupe` transform.\n",
       "id": "dedupe-transform.md",
       "path": "website/highlights/2020-03-10-dedupe-transform.md",
       "permalink": "https://vector.dev/highlights/dedupe-transform.md/",
@@ -2867,26 +2861,26 @@ module.exports = {
         "domain: sources",
         "source: vector"
       ],
-      "title": "The Vector Source Now Accepts Metrics"
+      "title": "New Dedupe Trasnform"
     },
     {
-      "author_github": "https://github.com/a-rodin",
+      "author_github": "https://github.com/binarylogic",
       "date": "2020-03-11",
-      "description": "- contains\n- prefix\n- regex\n- ends_with\n- etc\n",
+      "description": "High cardinality labels got you up at night...literally? Check out our new\n`tag_cardinality_limit` transform.\nIt protects your metrics storage from label misuse and let's your sleep at\nnight.",
       "id": "tag-cardinality-limit-transform.md",
       "path": "website/highlights/2020-03-11-tag-cardinality-limit-transform.md",
       "permalink": "https://vector.dev/highlights/tag-cardinality-limit-transform.md/",
       "tags": [
         "type: new feature",
-        "domain: sources",
-        "source: vector"
+        "domain: transforms",
+        "transform: tag_cardinality_limit"
       ],
-      "title": "The Vector Source Now Accepts Metrics"
+      "title": "New Tag Cardinality Limit Transform"
     },
     {
       "author_github": "https://github.com/a-rodin",
       "date": "2020-03-11",
-      "description": "- new api\n- metrics events\n- timers\n- guides\n",
+      "description": "A highly requested feature of Vector is to support the TLS protocol for the\n`vector` source and `vector` sink.\nThis is now available. Check out the `tls.*` options.\n",
       "id": "vector-sink-tls.md",
       "path": "website/highlights/2020-03-11-vector-sink-tls.md",
       "permalink": "https://vector.dev/highlights/vector-sink-tls.md/",
@@ -2895,40 +2889,40 @@ module.exports = {
         "domain: sources",
         "source: vector"
       ],
-      "title": "The Vector Source Now Accepts Metrics"
+      "title": "The Vector Source & Sink Support TLS"
     },
     {
-      "author_github": "https://github.com/a-rodin",
+      "author_github": "https://github.com/LucioFranco",
       "date": "2020-03-12",
-      "description": "",
+      "description": "Tried, true, and simple. Our new `papertrail` sink\nlets you send logs to the Papertrail loggign service.\n",
       "id": "papertrail-sink.md",
       "path": "website/highlights/2020-03-12-papertrail-sink.md",
       "permalink": "https://vector.dev/highlights/papertrail-sink.md/",
       "tags": [
         "type: new feature",
-        "domain: sources",
-        "source: vector"
+        "domain: sinks",
+        "sink: papertrail"
       ],
-      "title": "The Vector Source Now Accepts Metrics"
+      "title": "New Papertrail Sink"
     },
     {
-      "author_github": "https://github.com/a-rodin",
+      "author_github": "https://github.com/hoverbear",
       "date": "2020-03-14",
-      "description": "",
+      "description": "For you Honeycomb fans we have a new\n`honeycomb` sink. Keep an eye on\nPR#1991, which will introduce a new `transaction` transform.\nThis tranformed is designed to produce \"canoncial\" events. These are flattened,\nwide events that represent an entire transaction, the concept that Honeycomb\nis built upon. Vector + Honeycomb = 👯.\n",
       "id": "honeycomb-sink.md",
       "path": "website/highlights/2020-03-14-honeycomb-sink.md",
       "permalink": "https://vector.dev/highlights/honeycomb-sink.md/",
       "tags": [
         "type: new feature",
-        "domain: sources",
-        "source: vector"
+        "domain: sinks",
+        "sink: honeycomb"
       ],
-      "title": "The Vector Source Now Accepts Metrics"
+      "title": "New Honeycomb Sink"
     },
     {
-      "author_github": "https://github.com/bruceg",
+      "author_github": "https://github.com/hoverbear",
       "date": "2020-03-19",
-      "description": "We love Prometheus, but we also love options\nand so we've added a `prometheus` source to let you\nsend Prometheus format metrics anywhere you like.",
+      "description": "We have a new `pulsar` sink! This was a community\ncontribution and effort. Thanks to Evan for his\nhelp building this sink!\n",
       "id": "apache-pulsar-sink.md",
       "path": "website/highlights/2020-03-19-apache-pulsar-sink.md",
       "permalink": "https://vector.dev/highlights/apache-pulsar-sink.md/",
@@ -2940,18 +2934,18 @@ module.exports = {
       "title": "New Apache Pulsar Sink"
     },
     {
-      "author_github": "https://github.com/a-rodin",
+      "author_github": "https://github.com/LucioFranco",
       "date": "2020-03-23",
-      "description": "",
+      "description": "In addition to our `datadog_metrics` sink, we've\nintroduced a new `datadog_logs` sink. This is part\nof our broader effort to expand Vector's integrations.\n",
       "id": "datadog-logs-sink.md",
       "path": "website/highlights/2020-03-23-datadog-logs-sink.md",
       "permalink": "https://vector.dev/highlights/datadog-logs-sink.md/",
       "tags": [
         "type: new feature",
-        "domain: sources",
-        "source: vector"
+        "domain: sink",
+        "source: datadog_logs"
       ],
-      "title": "The Vector Source Now Accepts Metrics"
+      "title": "New Datadog Logs Sink"
     },
     {
       "author_github": "https://github.com/bruceg",
@@ -2968,23 +2962,22 @@ module.exports = {
       "title": "New Filter Transform"
     },
     {
-      "author_github": "https://github.com/a-rodin",
+      "author_github": "https://github.com/binarylogic",
       "date": "2020-03-31",
-      "description": "",
+      "description": "Vector is only as good as it's documentation and education. And while we\nput effort into our docs, we felt there was an educational\naspect missing, so we launched a new new guides section. This\nsection is meant to house high-quality guides that will be maintained and\nupdated continuously. To kick this new section off we've added the following:",
       "id": "guides-section.md",
       "path": "website/highlights/2020-03-31-guides-section.md",
       "permalink": "https://vector.dev/highlights/guides-section.md/",
       "tags": [
         "type: new feature",
-        "domain: sources",
-        "source: vector"
+        "domain: website"
       ],
-      "title": "The Vector Source Now Accepts Metrics"
+      "title": "A New Guides Section"
     },
     {
       "author_github": "https://github.com/a-rodin",
       "date": "2020-04-01",
-      "description": "- contains\n- prefix\n- regex\n- ends_with\n- is_log\n- is_metric\n- etc\n",
+      "description": "The Vector team is working hard to deliver a best-in-class Kubernetes\nintegration (scheduled for `0.10.0`). We have not officially announced this\nintegration because it is still in alpha. We are testing with a number of large\nclusters and finalizing the integration details in RFC#2222\n(feel free to chime in!). To that end, we've released a new\n`kubernetes_pod_metadata` transform\nthat enriches your Kubernetes logs with juicy Kubernetes metadata. Some details:",
       "id": "kubernetes-pod-metadata-transform.md",
       "path": "website/highlights/2020-04-01-kubernetes-pod-metadata-transform.md",
       "permalink": "https://vector.dev/highlights/kubernetes-pod-metadata-transform.md/",
@@ -2993,26 +2986,28 @@ module.exports = {
         "domain: sources",
         "source: vector"
       ],
-      "title": "The Vector Source Now Accepts Metrics"
+      "title": "New Kubernetes Pod Metdata Transform"
     },
     {
-      "author_github": "https://github.com/a-rodin",
+      "author_github": "https://github.com/binarylogic",
       "date": "2020-04-01",
-      "description": "- contains\n- prefix\n- regex\n- ends_with\n- is_log\n- is_metric\n- etc\n",
+      "description": "Vector has a concept \"conditions\" that are used to qualify events. For example,\nthis is used in Vector's unit testing feature,\n`swimlanes` transform, and\n`filter` transform. This change adds new predicates\nthat enable powerful matching and condition expression. Specifically, the\nfollowing predicates were added:",
       "id": "more-condition-predicates.md",
       "path": "website/highlights/2020-04-01-more-condition-predicates.md",
       "permalink": "https://vector.dev/highlights/more-condition-predicates.md/",
       "tags": [
-        "type: new feature",
-        "domain: sources",
-        "source: vector"
+        "type: enhancement",
+        "domain: testing",
+        "domain: transforms",
+        "transform: filter",
+        "transform: swimlanes"
       ],
-      "title": "The Vector Source Now Accepts Metrics"
+      "title": "More Condition Predicates"
     },
     {
-      "author_github": "https://github.com/a-rodin",
+      "author_github": "https://github.com/binarylogic",
       "date": "2020-04-07",
-      "description": "- new api\n- metrics events\n- timers\n- guides\n",
+      "description": "This is an exciting one! v2 of our `lua` transform has\nbeen released. It contains an entirely new API for using Lua within Vector,\nunblocking some very important limitations that our v1 (MVP) contained.",
       "id": "lua-transform-version-2.md",
       "path": "website/highlights/2020-04-07-lua-transform-version-2.md",
       "permalink": "https://vector.dev/highlights/lua-transform-version-2.md/",
@@ -3021,12 +3016,12 @@ module.exports = {
         "domain: sources",
         "source: vector"
       ],
-      "title": "The Vector Source Now Accepts Metrics"
+      "title": "Lua Transform v2"
     },
     {
-      "author_github": "https://github.com/a-rodin",
+      "author_github": "https://github.com/binarylogic",
       "date": "2020-04-07",
-      "description": "",
+      "description": "Until recently the `vector` source only accepted\n`log` events. Supporting metrics was blocked by pending\nmetric data model development, as well as topology improvements.\nPR#2245 removes that limitation enabling you to truly build\nobservability pipelines that can process both logs and metrics.\n",
       "id": "vector-to-vector-metrics.md",
       "path": "website/highlights/2020-04-07-vector-to-vector-metrics.md",
       "permalink": "https://vector.dev/highlights/vector-to-vector-metrics.md/",
@@ -3038,18 +3033,16 @@ module.exports = {
       "title": "The Vector Source Now Accepts Metrics"
     },
     {
-      "author_github": "https://github.com/a-rodin",
+      "author_github": "https://github.com/binarylogic",
       "date": "2020-04-11",
-      "description": "",
-      "id": "huge-performance-increase.md",
-      "path": "website/highlights/2020-04-11-huge-performance-increase.md",
-      "permalink": "https://vector.dev/highlights/huge-performance-increase.md/",
+      "description": "After some hard profiling work, we're pleased to announce that Vector is now\n~36% faster. These performance gains are not component\nspecific. All Vector users should see performance improvements.",
+      "id": "meaningful-performance-increase.md",
+      "path": "website/highlights/2020-04-11-meaningful-performance-increase.md",
+      "permalink": "https://vector.dev/highlights/meaningful-performance-increase.md/",
       "tags": [
-        "type: new feature",
-        "domain: sources",
-        "source: vector"
+        "type: performance"
       ],
-      "title": "The Vector Source Now Accepts Metrics"
+      "title": "A ~36% Performance Increase!"
     }
   ],
   "installation": {
@@ -3474,18 +3467,16 @@ module.exports = {
     }
   },
   "latest_highlight": {
-    "author_github": "https://github.com/a-rodin",
+    "author_github": "https://github.com/binarylogic",
     "date": "2020-04-11",
-    "description": "",
-    "id": "huge-performance-increase.md",
-    "path": "website/highlights/2020-04-11-huge-performance-increase.md",
-    "permalink": "https://vector.dev/highlights/huge-performance-increase.md/",
+    "description": "After some hard profiling work, we're pleased to announce that Vector is now\n~36% faster. These performance gains are not component\nspecific. All Vector users should see performance improvements.",
+    "id": "meaningful-performance-increase.md",
+    "path": "website/highlights/2020-04-11-meaningful-performance-increase.md",
+    "permalink": "https://vector.dev/highlights/meaningful-performance-increase.md/",
     "tags": [
-      "type: new feature",
-      "domain: sources",
-      "source: vector"
+      "type: performance"
     ],
-    "title": "The Vector Source Now Accepts Metrics"
+    "title": "A ~36% Performance Increase!"
   },
   "latest_post": {
     "author_github": "https://github.com/lukesteensen",
@@ -3594,7 +3585,7 @@ module.exports = {
     "last_version": "0.8.1",
     "permalink": "https://vector.dev/releases/0.8.2/",
     "subtitle": "",
-    "title": "Release v0.8.2",
+    "title": "Vector v0.8.2",
     "type": "initial dev",
     "type_url": "https://semver.org/#spec-item-4",
     "upgrade_guides": [
@@ -9821,7 +9812,7 @@ module.exports = {
       "last_version": null,
       "permalink": "https://vector.dev/releases/0.4.0/",
       "subtitle": "",
-      "title": "Release v0.4.0",
+      "title": "Vector v0.4.0",
       "type": "initial dev",
       "type_url": "https://semver.org/#spec-item-4",
       "upgrade_guides": [
@@ -11116,7 +11107,7 @@ module.exports = {
       "last_version": "0.4.0",
       "permalink": "https://vector.dev/releases/0.5.0/",
       "subtitle": "",
-      "title": "Release v0.5.0",
+      "title": "Vector v0.5.0",
       "type": "initial dev",
       "type_url": "https://semver.org/#spec-item-4",
       "upgrade_guides": [
@@ -16125,7 +16116,7 @@ module.exports = {
       "last_version": "0.5.0",
       "permalink": "https://vector.dev/releases/0.6.0/",
       "subtitle": "",
-      "title": "Release v0.6.0",
+      "title": "Vector v0.6.0",
       "type": "initial dev",
       "type_url": "https://semver.org/#spec-item-4",
       "upgrade_guides": [
@@ -19442,7 +19433,7 @@ module.exports = {
       "last_version": "0.6.0",
       "permalink": "https://vector.dev/releases/0.7.0/",
       "subtitle": "The Great Omelet",
-      "title": "Release v0.7.0",
+      "title": "Vector v0.7.0",
       "type": "initial dev",
       "type_url": "https://semver.org/#spec-item-4",
       "upgrade_guides": [
@@ -19751,7 +19742,7 @@ module.exports = {
       "last_version": "0.7.0",
       "permalink": "https://vector.dev/releases/0.7.1/",
       "subtitle": "",
-      "title": "Release v0.7.1",
+      "title": "Vector v0.7.1",
       "type": "initial dev",
       "type_url": "https://semver.org/#spec-item-4",
       "upgrade_guides": [
@@ -20013,7 +20004,7 @@ module.exports = {
       "last_version": "0.7.1",
       "permalink": "https://vector.dev/releases/0.7.2/",
       "subtitle": "",
-      "title": "Release v0.7.2",
+      "title": "Vector v0.7.2",
       "type": "initial dev",
       "type_url": "https://semver.org/#spec-item-4",
       "upgrade_guides": [
@@ -24287,12 +24278,12 @@ module.exports = {
       "compare_url": "https://github.com/timberio/vector/compare/v0.7.2...v0.8.0",
       "date": "2020-02-25",
       "deletions_count": 20387,
-      "description": "The features for this release have been pouring in. Clearly the\nVector team need better hobbies.",
+      "description": "The features for this release have been pouring in. Clearly the Vector team need better hobbies.",
       "highlights": [
         {
-          "author_github": "https://github.com/a-rodin",
+          "author_github": "https://github.com/LucioFranco",
           "date": "2020-01-30",
-          "description": "",
+          "description": "Sematext is an all inclusive monitoring solution, allowing to\nto send logs, metrics, and more to their service. You can now sink your log\ndata via the new `sematext_logs` sink. A\n`sematext_metrics` sink is in the works!\n",
           "id": "sematext-logs-sink.md",
           "path": "website/highlights/2020-01-30-sematext-logs-sink.md",
           "permalink": "https://vector.dev/highlights/sematext-logs-sink.md/",
@@ -24301,168 +24292,193 @@ module.exports = {
             "domain: sources",
             "source: vector"
           ],
-          "title": "The Vector Source Now Accepts Metrics"
+          "title": "New Sematext Logs Sink"
         },
         {
           "author_github": "https://github.com/a-rodin",
           "date": "2020-02-05",
-          "description": "",
+          "description": "LogDNA is know for it's simple, cost-effective log storage,\nand now you can take advantage of it through Vector's new\n`logdna` sink.\n",
+          "id": "logdna-sink.md",
+          "path": "website/highlights/2020-02-05-logdna-sink.md",
+          "permalink": "https://vector.dev/highlights/logdna-sink.md/",
+          "tags": [
+            "type: new feature",
+            "domain: sources",
+            "source: vector"
+          ],
+          "title": "The Vector Source Now Accepts Metrics"
+        },
+        {
+          "author_github": "https://github.com/Jeffail",
+          "date": "2020-02-05",
+          "description": "Among the many important things that we must accomplish on our road to 1.0,\ndeveloping a mascot was at the top of the list. Meet Vic, the\nVector mascot. He has an illustrious backstory that you should\ncheck out.",
           "id": "vic-the-vector-mascot.md",
           "path": "website/highlights/2020-02-05-vic-the-vector-mascot.md",
           "permalink": "https://vector.dev/highlights/vic-the-vector-mascot.md/",
           "tags": [
             "type: new feature",
-            "domain: sources",
-            "source: vector"
+            "domain: website"
           ],
-          "title": "The Vector Source Now Accepts Metrics"
+          "title": "Meet Vic, The Vector Mascot"
         },
         {
-          "author_github": "https://github.com/a-rodin",
+          "author_github": "https://github.com/Jeffail",
           "date": "2020-02-07",
-          "description": "",
+          "description": "Vector is now able to execute a topology spread across multiple config files,\nwhich allows you to break large pipelines down into bite size, easier managed,\nchunks. Running them is as simple as:",
           "id": "multi-config-files.md",
           "path": "website/highlights/2020-02-07-multi-config-files.md",
           "permalink": "https://vector.dev/highlights/multi-config-files.md/",
           "tags": [
             "type: new feature",
-            "domain: sources",
-            "source: vector"
+            "domain: config"
           ],
-          "title": "The Vector Source Now Accepts Metrics"
+          "title": "Support For Multiple Config Files"
         },
         {
-          "author_github": "https://github.com/a-rodin",
+          "author_github": "https://github.com/binarylogic",
           "date": "2020-02-10",
-          "description": "",
+          "description": "Humio is a powerful log storage system to offers fast ingestion\nand schema on read capabilities. You can now take advantage of Humio via the\n`humio_logs` sink.\n",
           "id": "humio-logs-sink.md",
           "path": "website/highlights/2020-02-10-humio-logs-sink.md",
           "permalink": "https://vector.dev/highlights/humio-logs-sink.md/",
           "tags": [
             "type: new feature",
-            "domain: sources",
-            "source: vector"
+            "domain: sinks",
+            "sink: humio"
           ],
           "title": "The Vector Source Now Accepts Metrics"
         },
         {
-          "author_github": "https://github.com/a-rodin",
+          "author_github": "https://github.com/binarylogic",
           "date": "2020-02-11",
-          "description": "",
+          "description": "Anyone that dealth with Syslog knows that the format specification is a \"goal\".\nIt's very common for formats to deviate slightly. To account for this we've\nupdated our Syslog parsing to follow the RFC 3164,\nRFC 5424, and other common formats. With these changes\nVector is very likely to parse a Syslog format, or anything like it. And, as\nalways, if Vector's `syslog` source fails to parse your\nformat you can always use the `socket` source and the\n`regex_parser` transform to roll your own\ncollection parsing pipeline.\n",
           "id": "improved-syslog-parsing.md",
           "path": "website/highlights/2020-02-11-improved-syslog-parsing.md",
           "permalink": "https://vector.dev/highlights/improved-syslog-parsing.md/",
           "tags": [
             "type: new feature",
             "domain: sources",
-            "source: vector"
+            "source: syslog"
           ],
-          "title": "The Vector Source Now Accepts Metrics"
+          "title": "Improved Syslog Parsing"
         },
         {
-          "author_github": "https://github.com/a-rodin",
+          "author_github": "https://github.com/hoverbear",
           "date": "2020-02-14",
-          "description": "",
+          "description": "Vector does not require a rigid schema for it's `log`\nevents. You are welcome to use any field names you like,\nsuch as the `timestamp`, `message`, and `host`. Until recently, the\ndefault names of these fields were not easily customizable. You either had to\nset these names within the source itself, or rename these fields\nusing the `rename_fields` transform. While this\nworks, it's combersome and is not obvious to anyone reading your Vector\nconfiguration file. Enter Vector's new global log\nschema. These new options allow you to change\nthe default names for the `message_key`, and more:",
           "id": "global-log-schema.md",
           "path": "website/highlights/2020-02-14-global-log-schema.md",
           "permalink": "https://vector.dev/highlights/global-log-schema.md/",
           "tags": [
             "type: new feature",
-            "domain: sources",
-            "source: vector"
+            "domain: config"
           ],
-          "title": "The Vector Source Now Accepts Metrics"
+          "title": "Introducing Vector's Global Log Schema"
         },
         {
           "author_github": "https://github.com/a-rodin",
           "date": "2020-02-17",
-          "description": "",
+          "description": "Vector offers a templating syntax that you can use to build\ndynamic values in your Vector configuration files. This\nhas now been added to the `add_fields` transform,\nenabling the ability to create fields from other fields values.\n",
+          "id": "add-fields-transform-templating.md",
+          "path": "website/highlights/2020-02-17-add-fields-transform-templating.md",
+          "permalink": "https://vector.dev/highlights/add-fields-transform-templating.md/",
+          "tags": [
+            "type: new feature",
+            "domain: transforms",
+            "source: add_fields"
+          ],
+          "title": "The Add Fields Transform Supports Templating"
+        },
+        {
+          "author_github": "https://github.com/binarylogic",
+          "date": "2020-02-17",
+          "description": "Loki has been one of our most requested sinks and Vector now has\nsupport for it via the `loki` sink. Vector is an amazing\nfit for this sink because Vector allows you to derive metrics from\nlogs, making it easy to align labels and\ncorrelate logs and metrics.",
           "id": "loki-sink.md",
           "path": "website/highlights/2020-02-17-loki-sink.md",
           "permalink": "https://vector.dev/highlights/loki-sink.md/",
           "tags": [
             "type: new feature",
-            "domain: sources",
-            "source: vector"
+            "domain: sinks",
+            "sink: loki"
           ],
-          "title": "The Vector Source Now Accepts Metrics"
+          "title": "New Loki Sink"
         },
         {
-          "author_github": "https://github.com/a-rodin",
+          "author_github": "https://github.com/binarylogic",
           "date": "2020-02-18",
-          "description": "",
+          "description": "Influxdb is a popular time-series and metrics storage that\nVector now supports via the `influxdb_metrics` sink.\n",
           "id": "influxdb-metrics-sink.md",
           "path": "website/highlights/2020-02-18-influxdb-metrics-sink.md",
           "permalink": "https://vector.dev/highlights/influxdb-metrics-sink.md/",
           "tags": [
             "type: new feature",
-            "domain: sources",
-            "source: vector"
+            "domain: sinks",
+            "sink: influxdb_metrics"
           ],
-          "title": "The Vector Source Now Accepts Metrics"
+          "title": "New Influxdb Metrics Sink"
         },
         {
           "author_github": "https://github.com/a-rodin",
           "date": "2020-02-20",
-          "description": "",
+          "description": "The GCP Cloud Storage service is reliable, durable,\ncheap storage for users on Google's Cloud. It's similar to Amazon's S3\nservice. Vector now supports this via the `gcp_cloud_storage`\nsink.",
           "id": "gcp-cloud-storage-sink.md",
           "path": "website/highlights/2020-02-20-gcp-cloud-storage-sink.md",
           "permalink": "https://vector.dev/highlights/gcp-cloud-storage-sink.md/",
           "tags": [
             "type: new feature",
-            "domain: sources",
-            "source: vector"
+            "domain: sinks",
+            "sink: gcp_cloud_storage"
           ],
-          "title": "The Vector Source Now Accepts Metrics"
+          "title": "New GCP Cloud Storage Sink"
         },
         {
-          "author_github": "https://github.com/a-rodin",
+          "author_github": "https://github.com/MOZGIII",
           "date": "2020-02-21",
-          "description": "- contains\n- prefix\n- regex\n- ends_with\n- is_log\n- is_metric\n- etc\n",
+          "description": "One of the biggest frustrations we've heard from users in this space is the\ninability to merge lines together. Such a simple task can be incredibly\ncomplex and hard. Fear not! We plan to add first-class support for solving\nthis problem.",
           "id": "file-source-multiline-support.md",
           "path": "website/highlights/2020-02-21-file-source-multiline-support.md",
           "permalink": "https://vector.dev/highlights/file-source-multiline-support.md/",
           "tags": [
-            "type: new feature",
+            "type: enhancement",
             "domain: sources",
-            "source: vector"
+            "source: file"
           ],
-          "title": "The Vector Source Now Accepts Metrics"
+          "title": "Improved Multiline Support In The File Soruce"
         },
         {
-          "author_github": "https://github.com/a-rodin",
+          "author_github": "https://github.com/hoverbear",
           "date": "2020-02-24",
-          "description": "",
+          "description": "Vector has a long overdue `rename_fields` transform.\nThis does exactly what it says, rename fields :).\n",
           "id": "rename-fields-transform.md",
           "path": "website/highlights/2020-02-24-rename-fields-transform.md",
           "permalink": "https://vector.dev/highlights/rename-fields-transform.md/",
           "tags": [
             "type: new feature",
-            "domain: sources",
-            "source: vector"
+            "domain: transforms",
+            "transforms: rename_fields"
           ],
-          "title": "The Vector Source Now Accepts Metrics"
+          "title": "New Rename Fields Transform"
         },
         {
-          "author_github": "https://github.com/a-rodin",
+          "author_github": "https://github.com/Jeffail",
           "date": "2020-02-24",
-          "description": "",
+          "description": "The new `swimlanes` transform makes it much easier\nto configure conditional branches of transforms and sinks. For example, you can\neasily create if/else pipelines.",
           "id": "swimlanes-transform.md",
           "path": "website/highlights/2020-02-24-swimlanes-transform.md",
           "permalink": "https://vector.dev/highlights/swimlanes-transform.md/",
           "tags": [
             "type: new feature",
-            "domain: sources",
-            "source: vector"
+            "domain: transforms",
+            "transform: swimlanes"
           ],
-          "title": "The Vector Source Now Accepts Metrics"
+          "title": "New Swimlanes Transform"
         }
       ],
       "insertions_count": 53951,
       "last_version": "0.7.2",
       "permalink": "https://vector.dev/releases/0.8.0/",
       "subtitle": "A wholesome platter of features",
-      "title": "Release v0.8.0",
+      "title": "Vector v0.8.0",
       "type": "initial dev",
       "type_url": "https://semver.org/#spec-item-4",
       "upgrade_guides": [
@@ -24501,23 +24517,21 @@ module.exports = {
         {
           "author_github": "https://github.com/a-rodin",
           "date": "2020-03-03",
-          "description": "- contains\n- prefix\n- regex\n- ends_with\n- etc\n",
+          "description": "In addition to our security policy, we've added\na new privacy policy. It's our pledge that Vector\nwill _never_ implement any tactics, grey-area or not, to unknowingly collect\ndata.\n",
           "id": "privacy-policy.md",
           "path": "website/highlights/2020-03-03-privacy-policy.md",
           "permalink": "https://vector.dev/highlights/privacy-policy.md/",
           "tags": [
-            "type: new feature",
-            "domain: sources",
-            "source: vector"
+            "type: announcement"
           ],
-          "title": "The Vector Source Now Accepts Metrics"
+          "title": "We've Added A Privacy Policy"
         }
       ],
       "insertions_count": 1,
       "last_version": "0.8.0",
       "permalink": "https://vector.dev/releases/0.8.1/",
       "subtitle": "",
-      "title": "Release v0.8.1",
+      "title": "Vector v0.8.1",
       "type": "initial dev",
       "type_url": "https://semver.org/#spec-item-4",
       "upgrade_guides": [
@@ -24619,7 +24633,7 @@ module.exports = {
       "last_version": "0.8.1",
       "permalink": "https://vector.dev/releases/0.8.2/",
       "subtitle": "",
-      "title": "Release v0.8.2",
+      "title": "Vector v0.8.2",
       "type": "initial dev",
       "type_url": "https://semver.org/#spec-item-4",
       "upgrade_guides": [

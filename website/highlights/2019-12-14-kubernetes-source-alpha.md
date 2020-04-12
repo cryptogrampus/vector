@@ -1,5 +1,6 @@
 ---
 last_modified_on: "2020-03-31"
+$schema: "/.meta/.schemas/highlights.json"
 id: kubernetes-source-alpha
 title: "New Kubernetes Source (alpha)"
 description: "Early adopters have a new Kuberenetes source to chew on"

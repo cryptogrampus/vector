@@ -1,5 +1,6 @@
 ---
 last_modified_on: "2020-03-31"
+$schema: "/.meta/.schemas/highlights.json"
 title: "New Prometheus Source"
 description: "Scrape prometheus metrics with Vector"
 author_github: https://github.com/Jeffail

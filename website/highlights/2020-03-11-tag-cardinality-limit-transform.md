@@ -1,16 +1,17 @@
 ---
 last_modified_on: "2020-03-31"
-title: "The Vector Source Now Accepts Metrics"
-description: "Until now, the Vector source only accepted logs, now it accepts metrics as well"
-author_github: https://github.com/a-rodin
+$schema: "/.meta/.schemas/highlights.json"
+title: "New Tag Cardinality Limit Transform"
+author_github: https://github.com/binarylogic
 pr_numbers: [1959]
 release: "nightly"
-tags: ["type: new feature", "domain: sources", "source: vector"]
+tags: ["type: new feature", "domain: transforms", "transform: tag_cardinality_limit"]
 ---
 
+High cardinality labels got you up at night...literally? Check out our new
+[`tag_cardinality_limit` transform][docs.transforms.tag_cardinality_limit].
+It protects your metrics storage from label misuse and let's your sleep at
+night.
 
-- contains
-- prefix
-- regex
-- ends_with
-- etc
+More to come! This feature is part of our [best-in-class operator
+UX][urls.milestone_39] initiative.

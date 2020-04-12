@@ -2,21 +2,21 @@ import React from 'react';
 
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
+import ReleaseItems from '@theme/ReleaseItems';
 
 
 function ReleaseListPage(props) {
+  const {items} = props;
+
   return (
-    <Layout title="Releases" description="Vector releases, highlights, and changelog.">
+    <Layout title="Releases" description="All Vector releases.">
       <header className="hero hero--clean">
         <div className="container">
           <h1>Vector Releases</h1>
-          <div className="hero--subtitle">
-            Thoughtful releases to help you get the most out of Vector. Created and curated by the <Link to="/community#team">Vector team</Link>.
-          </div>
         </div>
       </header>
       <main className="container container--s">
-        Releases go here
+        <ReleaseItems items={items} />
       </main>
     </Layout>
   );

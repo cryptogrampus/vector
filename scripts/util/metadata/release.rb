@@ -5,22 +5,22 @@ class Release
   include Comparable
 
   attr_reader :commits,
-    :subtitle,
     :description,
     :date,
+    :highlights,
     :last_date,
     :last_version,
     :permalink,
-    :highlights,
+    :subtitle,
     :upgrade_guides,
     :version
 
   def initialize(release_hash, last_version, last_date, all_highlights)
+    @description = release_hash["description"] || ""
+    @date = release_hash.fetch("date").to_date
     @last_date = last_date
     @last_version = last_version
-    @date = release_hash.fetch("date").to_date
     @subtitle = release_hash["subtitle"] || ""
-    @description = release_hash["description"] || ""
 
     @upgrade_guides =
       (release_hash["upgrade_guides"] || []).collect do |guide_hash|
@@ -129,7 +129,7 @@ class Release
   end
 
   def title
-    @title ||= "Release v#{version}"
+    @title ||= "Vector v#{version}"
   end
 
   def to_h

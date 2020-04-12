@@ -1,5 +1,6 @@
 ---
 last_modified_on: "2020-03-31"
+$schema: "/.meta/.schemas/highlights.json"
 id: ec2-metadata
 title: "New AWS EC2 Medata Transform"
 description: "Enrich your events with EC2 metadata"

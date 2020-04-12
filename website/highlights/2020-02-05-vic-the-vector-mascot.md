@@ -1,9 +1,16 @@
 ---
 last_modified_on: "2020-03-31"
-title: "The Vector Source Now Accepts Metrics"
-description: "Until now, the Vector source only accepted logs, now it accepts metrics as well"
-author_github: https://github.com/a-rodin
+$schema: "/.meta/.schemas/highlights.json"
+title: "Meet Vic, The Vector Mascot"
+author_github: https://github.com/Jeffail
 pr_numbers: [1710]
 release: "0.8.0"
-tags: ["type: new feature", "domain: sources", "source: vector"]
+tags: ["type: new feature", "domain: website"]
 ---
+
+Among the many important things that we must accomplish on our road to 1.0,
+developing a mascot was at the top of the list. [Meet Vic][pages.vic], the
+Vector mascot. He has an [illustrious][pages.vic] backstory that you should
+check out.
+
+<img src="/img/vic.svg" className={styles.vicLarge} width="100%" height="auto" />

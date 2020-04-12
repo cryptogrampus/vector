@@ -1,18 +1,21 @@
 ---
 last_modified_on: "2020-03-31"
-title: "The Vector Source Now Accepts Metrics"
-description: "Until now, the Vector source only accepted logs, now it accepts metrics as well"
-author_github: https://github.com/a-rodin
+$schema: "/.meta/.schemas/highlights.json"
+title: "Improved Multiline Support In The File Soruce"
+author_github: https://github.com/MOZGIII
 pr_numbers: [1852]
 release: "0.8.0"
-tags: ["type: new feature", "domain: sources", "source: vector"]
+tags: ["type: enhancement", "domain: sources", "source: file"]
 ---
 
+One of the biggest frustrations we've heard from users in this space is the
+inability to merge lines together. Such a simple task can be incredibly
+complex and hard. Fear not! We plan to add first-class support for solving
+this problem.
 
-- contains
-- prefix
-- regex
-- ends_with
-- is_log
-- is_metric
-- etc
+In addition to the recently added [automatic merging of Docker
+logs][docs.sources.docker#auto_partial_merge], we also added [better multiline
+[support][docs.sources.file#multiline] to our [`file` source][docs.sources.file].
+These options are very expressive and should solve the vast majority of
+multiline merging problems. And if this doesn't do it, you can always fallback
+to our [`lua` transform][docs.transforms.lua].

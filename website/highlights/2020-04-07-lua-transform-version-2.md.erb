@@ -1,0 +1,31 @@
+---
+last_modified_on: "2020-03-31"
+$schema: "/.meta/.schemas/highlights.json"
+title: "Lua Transform v2"
+author_github: https://github.com/binarylogic
+pr_numbers: [2126]
+release: "nightly"
+tags: ["type: new feature", "domain: sources", "source: vector"]
+---
+
+This is an exciting one! v2 of our [`lua` transform][docs.transforms.lua] has
+been released. It contains an entirely new API for using Lua within Vector,
+unblocking some very important limitations that our v1 (MVP) contained.
+
+<!--truncate-->
+
+* Correct data model and type conversions.
+* Introduction of hooks to maintain global state.
+* Introduction of timers to facilitate timed flushing. Useful for aggregations.
+* The ability to accept and work with metrics data.
+
+This new version comes chock-full of documentation and guides, helping you to
+extract the full potential of this transform. To get started:
+
+<Jump to="[[[docs.transforms.lua]]]" leftIcon="book">Docs: Lua Transform</Jump>
+<Jump to="[[[guides.custom-aggregations-with-lua]]]" leftIcon="book-open">Guide: Custom aggregations with Lua</Jump>
+<Jump to="[[[guides.parsing-csv-logs-with-lua]]]" leftIcon="book-open">Guide: Parsing CSV logs with Lua</Jump>
+
+And for the curious:
+
+<Jump to="[[[urls.vector_lua_rfc]]]" leftIcon="book">Vector's Lua RFC</Jump>

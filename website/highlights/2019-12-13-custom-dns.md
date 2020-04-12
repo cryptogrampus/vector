@@ -1,5 +1,6 @@
 ---
 last_modified_on: "2020-03-31"
+$schema: "/.meta/.schemas/highlights.json"
 id: custom-dns
 title: "Use Custom DNS Servers"
 description: "Point Vector to custom DNS servers"

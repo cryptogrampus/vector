@@ -34,7 +34,7 @@ function Highlight(props) {
           <Avatar
             github={author_github}
             size="sm"
-            subTitle={<TimeAgo datetime={date} />}
+            subTitle={<TimeAgo title={dateFormat(date, "mmm dS, yyyy")} pubdate="pubdate" datetime={date} />}
             rel="author" />
           <Tags colorProfile="blog" tags={tags} />
         </article>

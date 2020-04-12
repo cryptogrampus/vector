@@ -13,9 +13,8 @@ import dateFormat from 'dateformat';
 import styles from './styles.module.css';
 
 function HighlightPage(props) {
-  let description = 'Change me';
-  const {content: ReleaseHighlightContents} = props;
-  const {frontMatter, metadata} = ReleaseHighlightContents;
+  const {content: HighlightContents} = props;
+  const {frontMatter, metadata} = HighlightContents;
   const {author_github, id, title} = frontMatter;
   const {date: dateString, tags} = metadata;
   const date = new Date(Date.parse(dateString));
@@ -28,7 +27,7 @@ function HighlightPage(props) {
             <Avatar
               github={author_github}
               size="lg"
-              nameSuffix={<> / <time pubdate="pubdate" dateTime={date.toISOString()}>{dateFormat(date, "mmm dS, yyyy")} / <TimeAgo datetime={date} /></time></>}
+              nameSuffix={<> / <TimeAgo pubdate="pubdate" title={dateFormat(date, "mmm dS, yyyy")} datetime={date} /></>}
               rel="author"
               subTitle={false}
               vertical={true} />
@@ -40,7 +39,7 @@ function HighlightPage(props) {
         </header>
         <div className="container container--xs margin-vert--xl">
           <section className="markdown align-text-edges dropcap">
-            <MDXProvider components={MDXComponents}><ReleaseHighlightContents /></MDXProvider>
+            <MDXProvider components={MDXComponents}><HighlightContents /></MDXProvider>
           </section>
           <section>
             <div className="row">

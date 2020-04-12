@@ -1,9 +1,12 @@
 ---
 last_modified_on: "2020-03-31"
-title: "The Vector Source Now Accepts Metrics"
-description: "Until now, the Vector source only accepted logs, now it accepts metrics as well"
-author_github: https://github.com/a-rodin
+$schema: "/.meta/.schemas/highlights.json"
+title: "New Influxdb Metrics Sink"
+author_github: https://github.com/binarylogic
 pr_numbers: [1759]
 release: "0.8.0"
-tags: ["type: new feature", "domain: sources", "source: vector"]
+tags: ["type: new feature", "domain: sinks", "sink: influxdb_metrics"]
 ---
+
+[Influxdb][urls.influxdb] is a popular time-series and metrics storage that
+Vector now supports via the [`influxdb_metrics` sink][docs.sinks.influxdb_metrics].

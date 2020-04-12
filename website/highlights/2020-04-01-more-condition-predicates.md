@@ -1,18 +1,23 @@
 ---
 last_modified_on: "2020-03-31"
-title: "The Vector Source Now Accepts Metrics"
-description: "Until now, the Vector source only accepted logs, now it accepts metrics as well"
-author_github: https://github.com/a-rodin
-pr_numbers: [1949, 1997, 2183, 2198]
+$schema: "/.meta/.schemas/highlights.json"
+title: "More Condition Predicates"
+author_github: https://github.com/binarylogic
+pr_numbers: [1997, 2183, 2198]
 release: "nightly"
-tags: ["type: new feature", "domain: sources", "source: vector"]
+tags: ["type: enhancement", "domain: testing", "domain: transforms", "transform: filter", "transform: swimlanes"]
 ---
 
+Vector has a concept "conditions" that are used to qualify events. For example,
+this is used in Vector's [unit testing feature][guides.unit-testing],
+[`swimlanes` transform][docs.transforms.swimlanes], and
+[`filter` transform][docs.transforms.filter]. This change adds new predicates
+that enable powerful matching and condition expression. Specifically, the
+following predicates were added:
 
-- contains
-- prefix
-- regex
-- ends_with
-- is_log
-- is_metric
-- etc
+* `begins_with`
+* `contains`
+* `ends_with`
+* `is_log`
+* `is_metric`
+* `regex`

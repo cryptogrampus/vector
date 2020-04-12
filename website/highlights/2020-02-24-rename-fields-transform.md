@@ -1,9 +1,12 @@
 ---
 last_modified_on: "2020-03-31"
-title: "The Vector Source Now Accepts Metrics"
-description: "Until now, the Vector source only accepted logs, now it accepts metrics as well"
-author_github: https://github.com/a-rodin
+$schema: "/.meta/.schemas/highlights.json"
+title: "New Rename Fields Transform"
+author_github: https://github.com/hoverbear
 pr_numbers: [1800]
 release: "0.8.0"
-tags: ["type: new feature", "domain: sources", "source: vector"]
+tags: ["type: new feature", "domain: transforms", "transforms: rename_fields"]
 ---
+
+Vector has a long overdue [`rename_fields` transform][docs.transforms.rename_fields].
+This does exactly what it says, rename fields :).

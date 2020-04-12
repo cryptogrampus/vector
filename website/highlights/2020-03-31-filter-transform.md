@@ -1,5 +1,6 @@
 ---
 last_modified_on: "2020-03-31"
+$schema: "/.meta/.schemas/highlights.json"
 title: "New Filter Transform"
 description: "Filter and route your logs based on defined conditions"
 author_github: https://github.com/bruceg

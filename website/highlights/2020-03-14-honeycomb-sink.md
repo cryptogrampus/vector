@@ -1,9 +1,15 @@
 ---
-last_modified_on: "2020-03-31"
-title: "The Vector Source Now Accepts Metrics"
-description: "Until now, the Vector source only accepted logs, now it accepts metrics as well"
-author_github: https://github.com/a-rodin
-pr_numbers: [1847]
+last_modified_on: "2020-03-19"
+title: "New Honeycomb Sink"
+author_github: https://github.com/hoverbear
+pr_numbers: [1665]
 release: "nightly"
-tags: ["type: new feature", "domain: sources", "source: vector"]
+tags: ["type: new feature", "domain: sinks", "sink: honeycomb"]
 ---
+
+For you [Honeycomb][urls.honeycomb] fans we have a new
+[`honeycomb` sink][docs.sinks.honeycomb]. Keep an eye on
+[PR#1991][urls.pr_1991], which will introduce a new `transaction` transform.
+This tranformed is designed to produce "canoncial" events. These are flattened,
+wide events that represent an entire transaction, the concept that Honeycomb
+is built upon. Vector + Honeycomb = 👯.

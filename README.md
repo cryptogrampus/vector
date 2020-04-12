@@ -194,11 +194,11 @@ Or use your own [preferred method][docs.installation].
 
 ## Latest Highlights
 
-* [The Vector Source Now Accepts Metrics](https://vector.dev/highlights/huge-performance-increase.md/)
+* [A ~36% Performance Increase!](https://vector.dev/highlights/meaningful-performance-increase.md/)
 * [The Vector Source Now Accepts Metrics](https://vector.dev/highlights/vector-to-vector-metrics.md/)
-* [The Vector Source Now Accepts Metrics](https://vector.dev/highlights/lua-transform-version-2.md/)
-* [The Vector Source Now Accepts Metrics](https://vector.dev/highlights/more-condition-predicates.md/)
-* [The Vector Source Now Accepts Metrics](https://vector.dev/highlights/kubernetes-pod-metadata-transform.md/)
+* [More Condition Predicates](https://vector.dev/highlights/more-condition-predicates.md/)
+* [New Kubernetes Pod Metdata Transform](https://vector.dev/highlights/kubernetes-pod-metadata-transform.md/)
+* [New Filter Transform](https://vector.dev/highlights/filter-transform.md/)
 
 [view all...][urls.vector_highlights]
 

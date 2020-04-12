@@ -146,16 +146,34 @@ class Metadata
     # highlights
 
     @highlights ||=
-      Dir.glob("#{HIGHLIGHTS_ROOT}/**/*.md").collect do |path|
-        Highlight.new(path)
-      end.sort_by { |highlight| [ highlight.date, highlight.id ] }
+      Dir.
+        glob("#{HIGHLIGHTS_ROOT}/**/*.md").
+        filter do |path|
+          content = File.read(path)
+          content.start_with?("---\n")
+        end.
+        collect do |path|
+          Highlight.new(path)
+        end.
+        sort_by do |highlight|
+          [ highlight.date, highlight.id ]
+        end
 
     # posts
 
     @posts ||=
-      Dir.glob("#{POSTS_ROOT}/**/*.md").collect do |path|
-        Post.new(path)
-      end.sort_by { |post| [ post.date, post.id ] }
+      Dir.
+        glob("#{POSTS_ROOT}/**/*.md").
+        filter do |path|
+          content = File.read(path)
+          content.start_with?("---\n")
+        end.
+        collect do |path|
+          Post.new(path)
+        end.
+        sort_by do |post|
+          [ post.date, post.id ]
+        end
 
     # releases
 

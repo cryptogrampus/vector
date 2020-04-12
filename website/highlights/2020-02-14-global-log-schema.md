@@ -1,9 +1,39 @@
 ---
 last_modified_on: "2020-03-31"
-title: "The Vector Source Now Accepts Metrics"
-description: "Until now, the Vector source only accepted logs, now it accepts metrics as well"
-author_github: https://github.com/a-rodin
+$schema: "/.meta/.schemas/highlights.json"
+title: "Introducing Vector's Global Log Schema"
+author_github: https://github.com/hoverbear
 pr_numbers: [1769, 1795]
 release: "0.8.0"
-tags: ["type: new feature", "domain: sources", "source: vector"]
+tags: ["type: new feature", "domain: config"]
 ---
+
+Vector does not require a rigid schema for it's [`log`
+events][docs.data-model.log]. You are welcome to use any field names you like,
+such as the `timestamp`, `message`, and `host`. Until recently, the
+default names of these fields were not easily customizable. You either had to
+set these names within the [source][docs.sources] itself, or rename these fields
+using the [`rename_fields` transform][docs.transforms.rename_fields]. While this
+works, it's combersome and is not obvious to anyone reading your Vector
+configuration file. Enter Vector's new [global log
+schema][docs.global-options#log_schema]. These new options allow you to change
+the default names for the [`message_key`][docs.global-options#message_key],
+[`host_key`][docs.global-options#host_key],
+[`timestamp_key`][docs.global-options#host_key], and more:
+
+```toml title="vector.toml"
+[log_schema]
+  host_key = "host" # default
+  message_key = "message" # default
+  timestamp_key = "timestamp" # default
+```
+
+Why is this useful?
+
+1. Many Vector users already have a schema in-place and this makes it easy for
+   Vector to adopt that schema.
+2. Components often times need to coordinate. For example, the
+   [`kubernetes_key`][docs.global-options#message_key] is used in both the
+   [`kubernetes_pod_metadata` transform][urls.transforms.kubernetes_pod_metadata]
+   and the [`datadog_logs` sink][docs.sinks.datadog_logs]. This allows Vector
+   to perform intelligent mapping across fields making our sinks "smart".

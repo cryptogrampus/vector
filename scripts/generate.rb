@@ -371,6 +371,8 @@ Printer.title("Post processing generated files...")
 
 docs =
   Dir.glob("#{DOCS_ROOT}/**/*.md").to_a +
+    Dir.glob("#{GUIDES_ROOT}/**/*.md").to_a +
+    Dir.glob("#{HIGHLIGHTS_ROOT}/**/*.md").to_a +
     Dir.glob("#{POSTS_ROOT}/**/*.md").to_a +
     ["#{ROOT_DIR}/README.md"]
 
